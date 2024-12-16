@@ -9,7 +9,7 @@ export default function Footer (){
 
     return (
         <div className=" text-black py-8 font-montserrat bg-gray-300">
-            <div className='flex container mx-auto px-4 lg:grid lg:grid-cols-2 p-12 grid grid-cols-1'>
+            <div className='flex container mx-auto px-4 lg:grid lg:grid-cols-2 p-12 grid grid-cols-1 lg:space-y-0 space-y-6'>
                 <p className='text-2xl font-bold'> AS LUXURY ORIGINALS</p>
                 <div className="flex items-center justify-center space-x-6 mr-20">
           
@@ -30,7 +30,7 @@ export default function Footer (){
           </a>
         </div>
             </div>
-      <div className=" container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className=" container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {footerSections.map((section, index) => (
           <div key={index}>
             
