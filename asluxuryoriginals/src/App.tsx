@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   // Static pages defined inline
   const Home = () => <div>Home Page</div>;
-  const PerfumesAndColognes = () => <div>About Page</div>;
+  const Fragrances = () => <div>Fragrances Page</div>;
   const NewArrivals = () => <div>New Arrivals Page</div>;
   const Clothing = () => <div>Clothing Page</div>;
   const Footwear = () => <div>Footwear Page</div>;
@@ -21,7 +21,7 @@ function App() {
         /* Main Layout Routes */
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="perfumesandcolognes" element={<PerfumesAndColognes />} />
+          <Route path="fragrances" element={<Fragrances />} />
           <Route path="new-arrivals" element={<NewArrivals />} />
           <Route path="clothing" element={<Clothing />} />
           <Route path="footwear" element={<Footwear />} />
