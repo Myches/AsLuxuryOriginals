@@ -2,6 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './layout/MainLayout';
 import AuthLayout from './layout/AuthLayout';
 import './App.css';
+import NotFound from './pages/NotFound';
+import SearchResults from './pages/SearchResults';
+import FilterResults from './components/FilterResults';
 
 function App() {
   // Static pages defined inline
@@ -13,7 +16,7 @@ function App() {
   const Accessories = () => <div>Accessories Page</div>;
   const Login = () => <div>Login Page</div>;
   const SignUp = () => <div>Sign Up Page</div>;
-  const NotFound = () => <div>404 Not Found</div>;
+ 
 
   return (
     <Router>
@@ -26,7 +29,8 @@ function App() {
           <Route path="clothing" element={<Clothing />} />
           <Route path="footwear" element={<Footwear />} />
           <Route path="accessories" element={<Accessories />} />
-          
+          <Route path="/product/:id" element={<SearchResults />} />
+          <Route path="filter-results" element={<FilterResults />} />
         </Route>
 
         /* Auth Layout Routes */
