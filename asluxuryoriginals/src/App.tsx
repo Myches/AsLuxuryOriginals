@@ -1,7 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MainLayout from './layout/MainLayout';
-import AuthLayout from './layout/AuthLayout';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainLayout from "./layout/MainLayout";
+import AuthLayout from "./layout/AuthLayout";
+import "./App.css";
+// import About from "./pages/about/about";
+import SignInPage from "./pages/login/sign";
+import SignUpPage from "./pages/login/signUp";
 
 function App() {
   // Static pages defined inline
@@ -11,8 +14,6 @@ function App() {
   const Clothing = () => <div>Clothing Page</div>;
   const Footwear = () => <div>Footwear Page</div>;
   const Accessories = () => <div>Accessories Page</div>;
-  const Login = () => <div>Login Page</div>;
-  const SignUp = () => <div>Sign Up Page</div>;
   const NotFound = () => <div>404 Not Found</div>;
 
   return (
@@ -26,15 +27,16 @@ function App() {
           <Route path="clothing" element={<Clothing />} />
           <Route path="footwear" element={<Footwear />} />
           <Route path="accessories" element={<Accessories />} />
-          
+          <Route path="/sign" element={<SignInPage />} />
         </Route>
+        <Route path="/signUp" element={<SignUpPage />} />
+
 
         /* Auth Layout Routes */
         <Route path="/auth" element={<AuthLayout />}>
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<SignUp />} />
+          <Route path="sign" element={<SignInPage />} />
+          <Route path="signUp" element={<SignUpPage />} />
         </Route>
-
         /* 404 Not Found Route */
         <Route path="*" element={<NotFound />} />
       </Routes>
