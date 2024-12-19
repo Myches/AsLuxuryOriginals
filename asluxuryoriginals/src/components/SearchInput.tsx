@@ -4,47 +4,50 @@ import { products } from '../utils/data-json';
 import { Product } from '../types/data-types';
 import { useNavigate } from "react-router-dom";
 
-export default function SearchInput() {
-  const [searchQuery, setSearchQuery] = useState<string>(""); // Search input state
-  const [data, setData] = useState<Product[]>([]); // Products data
+
+
+type SearchInputProps = {
+  onItemSelect: () => void;
+};
+
+
+export default function SearchInput({ onItemSelect }: SearchInputProps)  {
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [data, setData] = useState<Product[]>([]); 
   const [filteredData, setFilteredData] = useState<{
     nameMatches: Product[];
     categoryMatches: Record<string, Product[]>;
   }>({
     nameMatches: [],
     categoryMatches: {},
-  }); // Filtered and grouped results
-  const [loading, setLoading] = useState<boolean>(true); // Loading state
-  const [isFocused, setIsFocused] = useState<boolean>(false); // Track if the input is focused
-  const navigate = useNavigate(); // For navigation
+  }); 
+  const [loading, setLoading] = useState<boolean>(true);
+  const [isFocused, setIsFocused] = useState<boolean>(false); 
+  const navigate = useNavigate(); 
   
-  const searchRef = useRef<HTMLDivElement | null>(null); // Ref to track the search component
-  const inputRef = useRef<HTMLInputElement | null>(null); // Ref to track the input field
+  const searchRef = useRef<HTMLDivElement | null>(null); 
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
-  // Simulate data fetching
+  
   useEffect(() => {
     setTimeout(() => {
-      setData(products); // Load the data from imported products
+      setData(products); 
       setLoading(false);
     }, 2000);
   }, []);
 
-  // Filter and group data based on search query
+  
   useEffect(() => {
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
 
-      // Filter products matching name
       const nameMatches = data.filter((product) =>
         product.name.toLowerCase().includes(query)
       );
-
-      // Filter products matching category
       const categoryMatches = data.filter((product) =>
         product.category.toLowerCase().includes(query)
       );
 
-      // Group category matches
       const groupedCategoryMatches = categoryMatches.reduce<
         Record<string, Product[]>
       >((acc, product) => {
@@ -52,25 +55,24 @@ export default function SearchInput() {
         acc[product.category].push(product);
         return acc;
       }, {});
-
-      setFilteredData({ nameMatches, categoryMatches: groupedCategoryMatches });
+   setFilteredData({ nameMatches, categoryMatches: groupedCategoryMatches });
     } else {
       setFilteredData({ nameMatches: [], categoryMatches: {} });
     }
   }, [searchQuery, data]);
 
-  // Handle click outside to blur input and hide results
+
   const handleClickOutside = (event: MouseEvent) => {
     if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-      setSearchQuery(""); // Clear the search query
-      setFilteredData({ nameMatches: [], categoryMatches: {} }); // Clear the filtered data
+      setSearchQuery("");
+      setFilteredData({ nameMatches: [], categoryMatches: {} });
       if (inputRef.current) {
-        inputRef.current.blur(); // Move focus out of input
+        inputRef.current.blur();
       }
     }
   };
 
-  // Add the event listener to detect clicks outside
+  
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -78,18 +80,16 @@ export default function SearchInput() {
     };
   }, []);
 
-  // Handle navigation to product or category page
-  const handleResultClick = (product: Product) => {
-    setSearchQuery(""); // Clear the search query
-    setFilteredData({ nameMatches: [], categoryMatches: {} }); // Clear the filtered data
 
-    // Navigate to the product page
+  const handleResultClick = (product: Product) => {
+    setSearchQuery(""); 
+    setFilteredData({ nameMatches: [], categoryMatches: {} }); 
+    onItemSelect();
     navigate(`/product/${product.id}`, { state: { product } });
   };
 
   return (
     <div className="relative w-full md:w-[300px]" ref={searchRef}>
-      {/* Search Bar */}
       <div className="flex items-center border rounded border-black p-2">
         <CiSearch size={20} className="mr-2" />
         <input
@@ -99,12 +99,12 @@ export default function SearchInput() {
           className="w-full flex-grow outline-none"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          onFocus={() => setIsFocused(true)} // Set focus state to true
+          onFocus={() => setIsFocused(true)} 
           disabled={loading}
         />
       </div>
 
-      {/* Search Results */}
+
       {searchQuery && isFocused && (
         <div className="absolute top-full left-0 right-0 bg-white border rounded shadow-lg z-50 mt-1 overflow-auto max-h-[300px]">
           {loading ? (
@@ -112,7 +112,6 @@ export default function SearchInput() {
           ) : filteredData.nameMatches.length > 0 ||
             Object.keys(filteredData.categoryMatches).length > 0 ? (
             <>
-              {/* Display name matches first */}
               {filteredData.nameMatches.length > 0 && (
                 <div className="p-2">
                   <p className="font-bold text-gray-700 mb-2">Matching Products</p>
@@ -120,7 +119,7 @@ export default function SearchInput() {
                     <div
                       key={product.id}
                       className="p-2 hover:bg-gray-100 cursor-pointer flex items-center"
-                      onClick={() => handleResultClick(product)} // Handle click
+                      onClick={() => handleResultClick(product)} 
                     >
                       <div>
                         <p className="font-medium">
@@ -133,7 +132,7 @@ export default function SearchInput() {
                 </div>
               )}
 
-              {/* Display category matches grouped */}
+             
               {Object.keys(filteredData.categoryMatches).map((category) => (
                 <div key={category} className="p-2">
                   <p className="font-bold text-gray-700 mb-2">{category}</p>
@@ -141,7 +140,7 @@ export default function SearchInput() {
                     <div
                       key={product.id}
                       className="p-2 hover:bg-gray-100 cursor-pointer flex items-center"
-                      onClick={() => handleResultClick(product)} // Handle click
+                      onClick={() => handleResultClick(product)}
                     >
                       <div>
                         <p className="font-medium">
@@ -163,7 +162,7 @@ export default function SearchInput() {
   );
 }
 
-// Highlight matching text
+
 function highlightMatch(text: string, query: string) {
   const parts = text.split(new RegExp(`(${query})`, "gi"));
   return (

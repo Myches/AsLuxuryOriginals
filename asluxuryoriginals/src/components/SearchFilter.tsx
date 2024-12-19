@@ -2,28 +2,35 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
-export default function SearchFilter(){
 
+
+
+type SearchFilterProps = {
+  onItemSelect: () => void; 
+};
+
+export default function SearchFilter({ onItemSelect }: SearchFilterProps)  {
     const [selectedCategory, setSelectedCategory] = useState<string>('');
     const navigate = useNavigate();
 
     const handleFilter = () => {
-        navigate(`/results?category=${selectedCategory}`);
+        navigate(`/filter-results?category=${selectedCategory}`);
+        onItemSelect();
       };
     
     return (
         <div>
-         <h1 className="text-xl font-bold mb-4">Filter by Category</h1>
+      
       <select
         value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.target.value)}
-        className="border border-gray-700 p-2 rounded-md mb-4 mx-2 text-sm"
+        className="border border-gray-700 p-2 rounded-md  mx-2 text-sm"
       >
         <option value="">Select a Category</option>
-<option value="clothing">Clothing</option>
-<option value="footwear">Footwear</option>
-<option value="accessories">Accessories</option>
-<option value="fragrances">Fragrances</option>
+<option value="Clothing">Clothing</option>
+<option value="Footwear">Footwear</option>
+<option value="Accessories">Accessories</option>
+<option value="Fragrances">Fragrances</option>
 
       </select>
       <button
