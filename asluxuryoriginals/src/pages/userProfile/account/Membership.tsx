@@ -13,7 +13,7 @@ const Membership = () => {
             to="/account/membership"
             className="block px-4 py-3 rounded-lg bg-blue-50 text-blue-700 font-semibold"
           >
-            Membership
+            Membership plan
           </Link>
           <Link
             to="/orders"

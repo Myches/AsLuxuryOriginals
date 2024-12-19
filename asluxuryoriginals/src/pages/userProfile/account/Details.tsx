@@ -18,7 +18,7 @@ const DetailsSecurity = () => {
             to="/account/membership"
             className="block px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors"
           >
-            Membership
+            Membership plan
           </Link>
           <Link
             to="/orders"

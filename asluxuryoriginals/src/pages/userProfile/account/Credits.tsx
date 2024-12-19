@@ -1,11 +1,7 @@
 // CreditsRefunds.tsx
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  CurrencyDollarIcon,
-//   ArrowPathIcon,
-  CheckIcon,
-} from "@heroicons/react/24/outline";
+import { CurrencyDollarIcon, CheckIcon } from "@heroicons/react/24/outline";
 // import Navbar from "../../../components/Navbar";
 
 const CreditsRefunds = () => {
@@ -20,7 +16,7 @@ const CreditsRefunds = () => {
             to="/account/membership"
             className="block px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors"
           >
-            Membership
+            Membership Plan
           </Link>
           <Link
             to="/orders"

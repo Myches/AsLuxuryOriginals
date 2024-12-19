@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Sublist from "./Sublist";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
 import LoginModal from "./signUp/authmodal";
-import SignInPage from "../pages/login/SignIn";
+// import SignInPage from "../pages/login/SignIn";
 import UserMenu from "../pages/userProfile/profileDropDown";
 
 const Navbar = () => {
