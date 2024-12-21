@@ -8,6 +8,9 @@ import SearchFilter from "./SearchFilter";
 import { links, sublistContent } from "../utils/data-json";
 import LoginModal from "./signUp/authmodal";
 
+
+
+
 export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -64,8 +67,9 @@ export default function Navbar() {
               className="hover:text-gray-400 "
             >
               <IoPersonOutline />
+             
             </button>
-
+          
             <button>
               <FaRegHeart />
             </button>
@@ -148,28 +152,25 @@ export default function Navbar() {
               </div>
             ))}
             <div className="flex justify-center space-x-6 mt-6 text-2xl">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="hover:text-gray-400 "
-              >
-                <Link to="sign">
-                  <IoPersonOutline />
-                </Link>
-              </button>
-              <button>
-                <FaRegHeart />
-              </button>
-              <button>
-                <IoBagOutline />
-              </button>
-            </div>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="hover:text-gray-400 "
+            > <IoPersonOutline /></button>
+            <button>
+              <FaRegHeart />
+            </button>
+            <button>
+              <IoBagOutline />
+            </button>
+          </div>
 
-            <div className="block md:hidden my-3">
-              <SearchInput onItemSelect={handleSearchItemSelect} />
-            </div>
-            <div className="block md:hidden p-3 text-md border rounded-lg">
-              <SearchFilter onItemSelect={handleSearchItemSelect} />
-            </div>
+          
+          <div className="block md:hidden my-3">
+            <SearchInput onItemSelect={handleSearchItemSelect} />
+          </div>
+          <div className="block md:hidden p-3 text-md border rounded-lg">
+            <SearchFilter  onItemSelect={handleSearchItemSelect}/>
+          </div>
           </div>
         </div>
       </div>

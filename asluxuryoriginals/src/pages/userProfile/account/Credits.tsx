@@ -1,5 +1,4 @@
 // CreditsRefunds.tsx
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   CurrencyDollarIcon,
@@ -7,6 +6,7 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { useState } from "react";
 
 const CreditsRefunds = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

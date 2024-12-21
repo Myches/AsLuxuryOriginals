@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+// Membership.tsx
+
 import { Link } from "react-router-dom";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 
 const Membership = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
