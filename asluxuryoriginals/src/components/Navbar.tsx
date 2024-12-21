@@ -1,155 +1,192 @@
-import React, { useState } from "react";
+import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import { IoPersonOutline, IoBagOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
-import { CiSearch } from "react-icons/ci";
-import { links, sublistContent } from "../utils/data-json";
-import { Link } from "react-router-dom";
-import Sublist from "./Sublist";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
+import SearchInput from "./SearchInput";
+import SearchFilter from "./SearchFilter";
+import { links, sublistContent } from "../utils/data-json";
 import LoginModal from "./signUp/authmodal";
-// import SignInPage from "../pages/login/SignIn";
-import UserMenu from "../pages/userProfile/profileDropDown";
 
-const Navbar = () => {
-  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export default function Navbar() {
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const timeoutRef = useRef<NodeJS.Timeout>();
 
-  // const handleLogin = (username, password, isSignUp) => {
-  //   if (isSignUp) {
-  //     // Implement signup logic (e.g., API call to create account)
-  //     console.log("Signing up:", { username, password });
-  //   } else {
-  //     // Implement login logic (e.g., API call to authenticate)
-  //     console.log("Logging in:", { username, password });
-  //   }
-  // };
+  const handleMouseEnter = (link: string): void => {
+    setActiveMenu(link);
+  };
 
-  const handleLogin1 = (formData, isSignUp, e) => {
-    e.preventDefault();
+  const handleMouseLeave = (): void => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 200);
+  };
 
-    if (isSignUp) {
-      if (!formData.agreedToTerms) {
-        console.error("Terms not agreed");
-        return;
-      }
-
-      // Signup logic with name, username, password
-      console.log("Signing up:", {
-        name: formData.name,
-        username: formData.username,
-        password: formData.password,
-      });
-    } else {
-      // Login logic with username and password
-      console.log("Logging in:", {
-        username: formData.username,
-        password: formData.password,
-      });
+  const handleDropdownMouseEnter = (): void => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
     }
   };
 
-  return (
-    <div className="w-full h-auto fixed font-montserrat border-b border-gray-200 bg-white z-50">
-      <div className="flex justify-between items-center p-4 md:px-16">
-        <Link to="/">
-          <p className="text-xl md:text-4xl font-bold text-black">
-            AS LUXURY ORIGINALS
-          </p>
-        </Link>
+  const handleDropdownMouseLeave = (): void => {
+    setActiveMenu(null);
+  };
 
-        <div className="hidden md:flex space-x-4 text-gray-700 text-md hover:text-black">
-          <span>Womenswear</span>
-          <span>Menswear</span>
-          <span>Kidswear</span>
-        </div>
-        <div className="hidden md:flex space-x-4 text-2xl">
-          <span>
+  const handleSearchItemSelect = (): void => {
+    setMenuOpen(false);
+  };
+
+  return (
+    <nav className="w-full h-auto fixed font-montserrat border-b border-gray-200 bg-white z-50 pt-3">
+      <div className="flex flex-col space-y-5">
+        <div className="relative flex items-center p-4 md:px-16">
+          <div
+            className="md:hidden text-2xl"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <HiX /> : <HiOutlineMenu />}
+          </div>
+
+          <Link
+            to="/"
+            className="absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap"
+          >
+            <p className="text-xl md:text-4xl font-bold text-black inline-block">
+              AS LUXURY ORIGINALS
+            </p>
+          </Link>
+
+          <div className="hidden md:flex lg:space-x-4 lg:text-2xl space-x-2 text-md ml-auto">
             <button
               onClick={() => setIsModalOpen(true)}
-              className=" hover:bg-gray-100 rounded-full"
+              className="hover:text-gray-400 "
             >
               <IoPersonOutline />
             </button>
-          </span>
 
-          <span>
-            <FaRegHeart />
-          </span>
-          <span>
-            <IoBagOutline />
-          </span>
-          {/* <span>{<UserMenu />}</span> */}
-        </div>
-
-        <div className="md:hidden gap-1 flex  items-center text-2xl">
-          <div>
-            <Link to="/sign">
-              <IoPersonOutline size={19} />
-            </Link>
-          </div>
-          <div className="hidden">{<UserMenu />}</div>
-          <div onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <HiX /> : <HiOutlineMenu />}
+            <button>
+              <FaRegHeart />
+            </button>
+            <button>
+              <IoBagOutline />
+            </button>
           </div>
         </div>
-      </div>
 
-      <div
-        className={`${
-          menuOpen ? "block" : "hidden"
-        } md:flex justify-between items-center py-4 md:px-16 bg-white px-8`}
-      >
-        <div className="flex flex-col md:flex-row md:space-x-4 text-md relative">
-          {links.map((link, index) => (
-            <div
-              key={index}
-              className="relative group"
-              onMouseEnter={() => setHoveredLink(link)}
-            >
-              <span
-                className={`cursor-pointer hover:text-gray-600 ${
-                  link === "New Arrivals" || link === "Fragrances"
-                    ? "cursor-default"
-                    : ""
-                }`}
+        <div className="flex justify-around items-center w-full">
+          <div
+            className="hidden md:flex justify-center space-x-6 py-4 relative"
+            onMouseLeave={handleMouseLeave}
+          >
+            {links.map((link) => (
+              <div
+                key={link}
+                className="relative group"
+                onMouseEnter={() => handleMouseEnter(link)}
               >
-                <Link to={`/${link.toLowerCase().replace(/\s+/g, "-")}`}>
+                <Link
+                  to={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="cursor-pointer text-gray-600 hover:text-black"
+                >
                   {link}
                 </Link>
-              </span>
-
-              <div
-                onMouseEnter={() => setHoveredLink(link)}
-                onMouseLeave={() => setHoveredLink(null)}
-                className="absolute left-0 top-full w-full bg-white shadow-lg z-20"
-              >
-                {hoveredLink === link && sublistContent[link] && (
-                  <Sublist items={sublistContent[link]!} />
+                {activeMenu === link && sublistContent[link] && (
+                  <div
+                    className="fixed left-0 right-0 bg-white border-t shadow-lg z-20 mt-4 "
+                    onMouseEnter={handleDropdownMouseEnter}
+                    onMouseLeave={handleDropdownMouseLeave}
+                  >
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 ">
+                      <div className="grid grid-cols-1 gap-4 ">
+                        <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">
+                          {link} Categories
+                        </h3>
+                        <div className="grid grid-cols-2 gap-4">
+                          {sublistContent[link]?.map((subcategory, index) => (
+                            <Link
+                              key={index}
+                              to={`/${link
+                                .toLowerCase()
+                                .replace(/\s+/g, "-")}/${subcategory
+                                .toLowerCase()
+                                .replace(/\s+/g, "-")}`}
+                              className="text-base text-gray-500 hover:text-black rounded-md p-2 block"
+                            >
+                              {subcategory}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 )}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <div className="hidden md:flex">
+            <SearchInput onItemSelect={handleSearchItemSelect} />
+          </div>
+          <div className="hidden md:flex p-3 text-md border rounded-lg">
+            <SearchFilter onItemSelect={handleSearchItemSelect} />
+          </div>
         </div>
-        <div className=" items-center hidden ">{<UserMenu />}</div>
-        <div className="flex items-center border rounded border-black p-2 mt-4 md:mt-0">
-          <CiSearch size={20} className="mr-2" />
-          <input
-            type="text"
-            placeholder="Search"
-            className="w-[200px] flex-grow outline-none"
-          />
+
+        <div className={`${menuOpen ? "block" : "hidden"} md:hidden px-8 p-6`}>
+          <div className="flex flex-col space-y-4">
+            {links.map((link) => (
+              <div key={link} className="border-b pb-2">
+                <Link
+                  to={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="block"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link}
+                </Link>
+              </div>
+            ))}
+            <div className="flex justify-center space-x-6 mt-6 text-2xl">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="hover:text-gray-400 "
+              >
+                <Link to="sign">
+                  <IoPersonOutline />
+                </Link>
+              </button>
+              <button>
+                <FaRegHeart />
+              </button>
+              <button>
+                <IoBagOutline />
+              </button>
+            </div>
+
+            <div className="block md:hidden my-3">
+              <SearchInput onItemSelect={handleSearchItemSelect} />
+            </div>
+            <div className="block md:hidden p-3 text-md border rounded-lg">
+              <SearchFilter onItemSelect={handleSearchItemSelect} />
+            </div>
+          </div>
         </div>
       </div>
-      {
-        <LoginModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          onLogin={handleLogin1}
-        />
-      }
-    </div>
-  );
-};
 
-export default Navbar;
+      {/* Modal Component */}
+      <LoginModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onLogin={(formData, isSignUp, e) => {
+          e.preventDefault();
+          if (isSignUp) {
+            console.log("Signing up with data:", formData);
+          } else {
+            console.log("Logging in with data:", formData);
+          }
+        }}
+      />
+    </nav>
+  );
+}

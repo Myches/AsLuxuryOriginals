@@ -9,27 +9,30 @@ export default function Footer (){
 
     return (
         <div className=" text-black py-8 font-montserrat bg-gray-300">
-            <div className='flex container mx-auto px-4 lg:grid lg:grid-cols-2 p-12 grid grid-cols-1 lg:space-y-0 space-y-6'>
-                <p className='text-2xl font-bold'> AS LUXURY ORIGINALS</p>
-                <div className="flex items-center justify-center space-x-6 mr-20">
-          
-          <a href="#" >
-            <FaFacebookF size={20} />
-          </a>
-          <a href="#" >
-            <FaTwitter size={20} />
-          </a>
-          <a href="#" >
-            <FaInstagram size={20} />
-          </a>
-          <a href="#" >
-            <FaYoutube size={20} />
-          </a>
-          <a href="#" >
-            <FaTiktok size={20} />
-          </a>
-        </div>
-            </div>
+           <div className="lg:flex-row flex flex-col lg:p-12 lg:m-0 m-8 lg:space-y-0 lg:space-y-6 space-y-3 lg:justify-between sm:items-center sm:justify-center">
+  <p className="text-2xl font-bold text-center">AS LUXURY ORIGINALS</p>
+
+  <div className='lg:flex lg:flex-col flex flex-row lg:space-y-3 lg:mr-20 mx-auto'>
+    <p className='lg:text-lg font-semibold'>Follow Us :</p>
+  <div className="flex items-center justify-center lg:space-x-6 space-x-3 lg:px-0 px-3">
+    <a href="#" className='hover:text-gray-400'>
+      <FaFacebookF size={20} />
+    </a>
+    <a href="#" className='hover:text-gray-400'>
+      <FaTwitter size={20} />
+    </a>
+    <a href="#" className='hover:text-gray-400'>
+      <FaInstagram size={20} />
+    </a>
+    <a href="#" className='hover:text-gray-400'>
+      <FaYoutube size={20} />
+    </a>
+    <a href="#" className='hover:text-gray-400'>
+      <FaTiktok size={20} />
+    </a>
+  </div>
+</div>
+</div>
       <div className=" container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {footerSections.map((section, index) => (
           <div key={index}>
