@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { IoPersonOutline, IoBagOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
@@ -7,37 +7,39 @@ import { HiOutlineMenu, HiX } from "react-icons/hi";
 import SearchFilter from "./SearchFilter";
 import { links, sublistContent } from "../utils/data-json";
 
-export default function Navbar ()  {
+export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const timeoutRef = useRef<NodeJS.Timeout>();
 
-
+  // Handle mouse enter for dropdown
   const handleMouseEnter = (link: string): void => {
     setActiveMenu(link);
   };
 
-
+  // Handle mouse leave for dropdown
   const handleMouseLeave = (): void => {
-    setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
       setActiveMenu(null);
     }, 200);
   };
 
-  
+  // Clear timeout on dropdown mouse enter
   const handleDropdownMouseEnter = (): void => {
-    clearTimeout();
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
   };
 
- 
+  // Close dropdown on mouse leave
   const handleDropdownMouseLeave = (): void => {
     setActiveMenu(null);
   };
 
-  
+  // Close the menu when a search item is selected
   const handleSearchItemSelect = (): void => {
     setMenuOpen(false);
   };
-
   return (
     <nav className="w-full h-auto fixed font-montserrat border-b border-gray-200 bg-white z-50 pt-3">
       <div className="flex flex-col space-y-5">
