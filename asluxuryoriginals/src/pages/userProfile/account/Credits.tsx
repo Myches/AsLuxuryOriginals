@@ -12,11 +12,11 @@ const CreditsRefunds = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50  w-full">
       {/* Mobile Header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
-        <div className="flex items-center justify-between p-4">
-          <h1 className="text-lg font-semibold">Credits & 111Refunds</h1>
+      <div className="lg:hidden    top-0 left-0 right-0 bg-white z-50 shadow-sm">
+        <div className="flex items-center mt-20 justify-between p-4">
+          <h1 className="text-lg font-semibold">Credits & Refunds</h1>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 rounded-lg hover:bg-gray-100"
@@ -83,7 +83,7 @@ const CreditsRefunds = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 lg:w-3/4 pt-16 lg:pt-0">
+        <div className="flex-1 lg:w-3/4 pt-1 mt-20 lg:pt-0">
           <div className="max-w-4xl mx-auto p-4 lg:p-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 lg:mb-8">
               Credits and Refunds

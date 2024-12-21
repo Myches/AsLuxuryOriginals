@@ -8,12 +8,10 @@ const SignInPage = () => {
   });
   const navigate = useNavigate();
 
-  const signIn =(e) => {
+  const signIn = (e) => {
     e.preventDefault();
-    setFormData({username: "",
-    password: "",})
-
-  }
+    setFormData({ username: "", password: "" });
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -29,7 +27,6 @@ const SignInPage = () => {
     console.log("Signing in:", formData);
     // Example: After successful login
     // navigate('/dashboard');
-  
   };
 
   const handleGmailSignIn = () => {
@@ -38,8 +35,8 @@ const SignInPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen flex w-full  items-center justify-center bg-gray-50 px-4 py-8 mt-10">
+      <div className="max-w-md w-full  space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Sign in to your account

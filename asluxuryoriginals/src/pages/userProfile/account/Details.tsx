@@ -1,7 +1,7 @@
 // DetailsSecurity.tsx
 import { Link } from "react-router-dom";
 import {
-  UserIcon,
+  // UserIcon,
   KeyIcon,
   ShieldCheckIcon,
   Bars3Icon,
@@ -13,9 +13,9 @@ const DetailsSecurity = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 w-full">
       {/* Mobile Header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
+      <div className="lg:hidden fixed mt-20 top-0 left-0 right-0 bg-white z-50 shadow-sm">
         <div className="flex items-center justify-between p-4">
           <h1 className="text-lg font-semibold">Account Details</h1>
           <button
@@ -31,7 +31,7 @@ const DetailsSecurity = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col lg:flex-row ">
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
           <div
@@ -43,7 +43,7 @@ const DetailsSecurity = () => {
         {/* Side Navigation */}
         <div
           className={`
-          fixed lg:static inset-y-0 left-0 transform 
+          fixed  lg:static inset-y-0 left-0 transform 
           ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}
           lg:translate-x-0 transition duration-200 ease-in-out
           z-50 w-64 lg:w-1/4  bg-white shadow-lg
@@ -85,7 +85,7 @@ const DetailsSecurity = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 lg:w-3/4 pt-16 lg:pt-0">
+        <div className="flex-1 lg:w-3/4 mt-24 pt-16 lg:pt-0">
           <div className="max-w-4xl mx-auto p-4 lg:p-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">
               Account Details & Security
