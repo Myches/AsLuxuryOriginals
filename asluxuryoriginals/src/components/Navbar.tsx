@@ -2,44 +2,45 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { IoPersonOutline, IoBagOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
-import SearchInput from "./SearchInput";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
+import SearchInput from "./SearchInput";
 import SearchFilter from "./SearchFilter";
 import { links, sublistContent } from "../utils/data-json";
+import LoginModal from "./signUp/authmodal";
+
+
+
 
 export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const timeoutRef = useRef<NodeJS.Timeout>();
 
-  // Handle mouse enter for dropdown
   const handleMouseEnter = (link: string): void => {
     setActiveMenu(link);
   };
 
-  // Handle mouse leave for dropdown
   const handleMouseLeave = (): void => {
     timeoutRef.current = setTimeout(() => {
       setActiveMenu(null);
     }, 200);
   };
 
-  // Clear timeout on dropdown mouse enter
   const handleDropdownMouseEnter = (): void => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
   };
 
-  // Close dropdown on mouse leave
   const handleDropdownMouseLeave = (): void => {
     setActiveMenu(null);
   };
 
-  // Close the menu when a search item is selected
   const handleSearchItemSelect = (): void => {
     setMenuOpen(false);
   };
+
   return (
     <nav className="w-full h-auto fixed font-montserrat border-b border-gray-200 bg-white z-50 pt-3">
       <div className="flex flex-col space-y-5">
@@ -61,15 +62,20 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex lg:space-x-4 lg:text-2xl space-x-2 text-md ml-auto">
-            <span>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="hover:text-gray-400 "
+            >
               <IoPersonOutline />
-            </span>
-            <span>
+             
+            </button>
+          
+            <button>
               <FaRegHeart />
-            </span>
-            <span>
+            </button>
+            <button>
               <IoBagOutline />
-            </span>
+            </button>
           </div>
         </div>
 
@@ -92,33 +98,29 @@ export default function Navbar() {
                 </Link>
                 {activeMenu === link && sublistContent[link] && (
                   <div
-                    className="fixed left-0 right-0 bg-white border-t shadow-lg z-20 mt-4"
+                    className="fixed left-0 right-0 bg-white border-t shadow-lg z-20 mt-4 "
                     onMouseEnter={handleDropdownMouseEnter}
                     onMouseLeave={handleDropdownMouseLeave}
                   >
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                      <div className="grid grid-cols-1 gap-4">
-                        <div>
-                          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">
-                            {link} Categories
-                          </h3>
-                          <div className="grid grid-cols-2 gap-4">
-                            {sublistContent[link]?.map(
-                              (subcategory, index) => (
-                                <Link
-                                  key={index}
-                                  to={`/${link
-                                    .toLowerCase()
-                                    .replace(/\s+/g, "-")}/${subcategory
-                                    .toLowerCase()
-                                    .replace(/\s+/g, "-")}`}
-                                  className="text-base text-gray-500 hover:text-black rounded-md p-2 block"
-                                >
-                                  {subcategory}
-                                </Link>
-                              )
-                            )}
-                          </div>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 ">
+                      <div className="grid grid-cols-1 gap-4 ">
+                        <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">
+                          {link} Categories
+                        </h3>
+                        <div className="grid grid-cols-2 gap-4">
+                          {sublistContent[link]?.map((subcategory, index) => (
+                            <Link
+                              key={index}
+                              to={`/${link
+                                .toLowerCase()
+                                .replace(/\s+/g, "-")}/${subcategory
+                                .toLowerCase()
+                                .replace(/\s+/g, "-")}`}
+                              className="text-base text-gray-500 hover:text-black rounded-md p-2 block"
+                            >
+                              {subcategory}
+                            </Link>
+                          ))}
                         </div>
                       </div>
                     </div>
@@ -132,7 +134,7 @@ export default function Navbar() {
             <SearchInput onItemSelect={handleSearchItemSelect} />
           </div>
           <div className="hidden md:flex p-3 text-md border rounded-lg">
-            <SearchFilter  onItemSelect={handleSearchItemSelect}/>
+            <SearchFilter onItemSelect={handleSearchItemSelect} />
           </div>
         </div>
 
@@ -151,19 +153,17 @@ export default function Navbar() {
                 </Link>
               </div>
             ))}
-          </div>
-
-       
-          <div className="flex justify-center space-x-6 mt-6 text-2xl">
-            <span>
-              <IoPersonOutline />
-            </span>
-            <span>
+            <div className="flex justify-center space-x-6 mt-6 text-2xl">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="hover:text-gray-400 "
+            > <IoPersonOutline /></button>
+            <button>
               <FaRegHeart />
-            </span>
-            <span>
+            </button>
+            <button>
               <IoBagOutline />
-            </span>
+            </button>
           </div>
 
           
@@ -173,10 +173,23 @@ export default function Navbar() {
           <div className="block md:hidden p-3 text-md border rounded-lg">
             <SearchFilter  onItemSelect={handleSearchItemSelect}/>
           </div>
+          </div>
         </div>
       </div>
+
+      {/* Modal Component */}
+      <LoginModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onLogin={(formData, isSignUp, e) => {
+          e.preventDefault();
+          if (isSignUp) {
+            console.log("Signing up with data:", formData);
+          } else {
+            console.log("Logging in with data:", formData);
+          }
+        }}
+      />
     </nav>
   );
-};
-
-
+}
