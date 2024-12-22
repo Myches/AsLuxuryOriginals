@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './layout/MainLayout';
 import AuthLayout from './layout/AuthLayout';
@@ -5,6 +6,14 @@ import './App.css';
 import NotFound from './pages/NotFound';
 import SearchResults from './pages/SearchResults';
 import FilterResults from './components/FilterResults';
+import SignInPage from "./pages/login/sign";
+import SignUpPage from "./pages/login/signUp";
+import Membership from "./pages/userProfile/account/Membership";
+import OrdersReturns from "./pages/userProfile/account/Orders";
+import CreditsRefunds from "./pages/userProfile/account/Credits";
+import DetailsSecurity from "./pages/userProfile/account/Details";
+
+
 
 function App() {
   // Static pages defined inline
@@ -14,9 +23,7 @@ function App() {
   const Clothing = () => <div>Clothing Page</div>;
   const Footwear = () => <div>Footwear Page</div>;
   const Accessories = () => <div>Accessories Page</div>;
-  const Login = () => <div>Login Page</div>;
-  const SignUp = () => <div>Sign Up Page</div>;
- 
+
 
   return (
     <Router>
@@ -31,19 +38,26 @@ function App() {
           <Route path="accessories" element={<Accessories />} />
           <Route path="/product/:id" element={<SearchResults />} />
           <Route path="filter-results" element={<FilterResults />} />
+          
         </Route>
 
         /* Auth Layout Routes */
         <Route path="/auth" element={<AuthLayout />}>
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<SignUp />} />
+          <Route path="sign" element={<SignInPage />} />
+          <Route path="signup" element={<SignUpPage/>} />
+          <Route path="signup" element={<SignUpPage/>} />
+          <Route path="membership" element={<Membership/>} />
+          <Route path="orders-returns" element={<OrdersReturns/>} />
+          <Route path="credits-refunds" element={<CreditsRefunds/>} />
+          <Route path="details-security" element={<DetailsSecurity/>} />
         </Route>
 
         /* 404 Not Found Route */
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
-  );
+
+  )
 }
 
 export default App;

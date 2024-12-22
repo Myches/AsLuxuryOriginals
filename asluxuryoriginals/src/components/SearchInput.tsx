@@ -95,7 +95,7 @@ export default function SearchInput({ onItemSelect }: SearchInputProps)  {
         <input
           ref={inputRef}
           type="text"
-          placeholder="Search by product or category..."
+          placeholder="Search by product "
           className="w-full flex-grow outline-none"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
