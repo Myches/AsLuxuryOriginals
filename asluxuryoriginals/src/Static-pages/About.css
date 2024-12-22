@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.div p:first-child {
+  font-size: clamp(18px, 3vw, 27.5px);
+  letter-spacing: 0.32px;
+  padding-bottom: 13px;
+  color: #636161;
+  line-height: 23px;
+  font-weight: 600;
+  /* font-family: "Plus Jakarta Sans", sans-serif; */
+}
+
+.div p:last-child {
+  color: #696767;
+  font-weight: 400;
+  font-size: clamp(10.5px, 3vw, 22px);
+  /* font-family: "Plus Jakarta Sans", sans-serif; */
+}
+
+@media (min-width: 768px) {
+  .div {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-template-rows: 2fr;
+    padding-bottom: 45px;
+    width: 90%;
+    place-self: center;
+  }
+
+  .div article {
+    width: 100%;
+    max-width: 555px;
+  }
+
+  .div p:first-child {
+    line-height: 35px;
+    padding-top: 1.6em;
+  }
+
+  .alpha {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    margin-top: 13rem;
+  }
+
+  .sim article {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1324px) {
+  .div div p:last-child {
+    font-size: 13px;
+    font-size: clamp(12px, 1vw, 16px);
+  }
+  
+  .div article {
+    max-width: 400px;
+  }
+  
+  .omega div li:last-of-type{
+    display: none;
+  }
+}

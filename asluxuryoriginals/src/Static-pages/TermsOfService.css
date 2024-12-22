@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.tos {
+  width: 90%;
+}
+
+.tos h1{
+  margin-top: 80px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  font-size: clamp(20px, 3vw, 28px);
+}
+
+.tos article{
+  padding-top: 1.5em;
+}
+
+.tos article:last-of-type{
+  padding-bottom: 2em;
+}
+
+.tos h3 {
+  font-size: clamp(18px, 3vw, 23px);
+  padding: 0.3em 0;
+}
+
+.tos p {
+  font-size: clamp(14px, 3vw, 19px);
+}
+
+.tos a {
+  text-decoration: underline;
+  color: rgb(55, 55, 179);
+  display: inline;
+  word-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+  .tos h1{
+    margin-top: 245px;
+  }
+}
+
