@@ -38,18 +38,18 @@ function App() {
           <Route path="accessories" element={<Accessories />} />
           <Route path="/product/:id" element={<SearchResults />} />
           <Route path="filter-results" element={<FilterResults />} />
-          
+          <Route path="/signUp" element={<SignUpPage />} />
+          <Route path="/account/membership" element={<Membership />} />
+          <Route path="/orders" element={<OrdersReturns />} />
+          <Route path="/credits" element={<CreditsRefunds />} />
+          <Route path="/security" element={<DetailsSecurity />} />
+          <Route path="/sign" element={<SignInPage />} />
         </Route>
+
+        
 
         /* Auth Layout Routes */
         <Route path="/auth" element={<AuthLayout />}>
-          <Route path="sign" element={<SignInPage />} />
-          <Route path="signup" element={<SignUpPage/>} />
-          <Route path="signup" element={<SignUpPage/>} />
-          <Route path="membership" element={<Membership/>} />
-          <Route path="orders-returns" element={<OrdersReturns/>} />
-          <Route path="credits-refunds" element={<CreditsRefunds/>} />
-          <Route path="details-security" element={<DetailsSecurity/>} />
         </Route>
 
         /* 404 Not Found Route */

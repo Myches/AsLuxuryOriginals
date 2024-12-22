@@ -74,6 +74,7 @@ export default function Navbar() {
             <span>
               <IoBagOutline />
             </span>
+           
           </div>
         </div>
 
@@ -151,6 +152,30 @@ export default function Navbar() {
                 </Link>
               </div>
             ))}
+
+<div className="flex justify-center space-x-6 mt-6 text-2xl">
+        <button
+        onClick={() => setIsModalOpen(true)}
+              className="hover:text-gray-400 "
+            >
+              <IoPersonOutline />
+             
+            </button>
+            <button>
+              <FaRegHeart />
+            </button>
+            <button>
+              <IoBagOutline />
+            </button>
+          </div>
+
+          
+          <div className="block md:hidden my-3">
+            <SearchInput onItemSelect={handleSearchItemSelect} />
+          </div>
+          <div className="block md:hidden p-3 text-md border rounded-lg">
+            <SearchFilter  onItemSelect={handleSearchItemSelect}/>
+          </div>
           </div>
         </div>
       </div>
@@ -168,6 +193,8 @@ export default function Navbar() {
           }
         }}
       />
+
+      
     </nav>
   );
 }
