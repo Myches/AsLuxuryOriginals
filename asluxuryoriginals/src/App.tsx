@@ -12,17 +12,17 @@ import Membership from "./pages/userProfile/account/Membership";
 import OrdersReturns from "./pages/userProfile/account/Orders";
 import CreditsRefunds from "./pages/userProfile/account/Credits";
 import DetailsSecurity from "./pages/userProfile/account/Details";
-
+import Footwear from './homeNavPages/Footwear';
+import Fragrances from './homeNavPages/Fragrances';
+import Accessories from './homeNavPages/Accessories';
+import NewArrivals from './homeNavPages/Arrival';
+import Clothing from './homeNavPages/Clothing';
+import Home from './homeNavPages/HomePage';
 
 
 function App() {
   // Static pages defined inline
-  const Home = () => <div>Home Page</div>;
-  const Fragrances = () => <div>Fragrances Page</div>;
-  const NewArrivals = () => <div>New Arrivals Page</div>;
-  const Clothing = () => <div>Clothing Page</div>;
-  const Footwear = () => <div>Footwear Page</div>;
-  const Accessories = () => <div>Accessories Page</div>;
+
 
 
   return (
