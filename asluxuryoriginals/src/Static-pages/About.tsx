@@ -6,7 +6,7 @@ const About = () => {
 
   return (
     <div>
-      <div className="div sim alpha">
+      <div className="div text-r">
         <article>
           <img src=".\src\assets\Images\about-asset-3.webp" alt="" />
         </article>
@@ -23,11 +23,11 @@ const About = () => {
         </div>
       </div>
 
-      <div className="div fub two">
+      <div className="div">
         <article>
           <img src=".\src\assets\Images\mens-apparel-fashion-stores-interior-design-1-1334x834.jpg" alt="" />
         </article>
-        <div style={{padding: '2.5em 2em'}}>
+        <div>
           <p>EXCEPTIONAL SERVICE.</p>
           <p>
             As Luxury Originals is dedicated to providing the latest premium and
@@ -39,12 +39,12 @@ const About = () => {
         </div>
       </div>
 
-      <div className="div sim">
+      <div className="div text-r">
         <article>
           <img src=".\src\assets\Images\showroom-4-946x1024.jpg" alt="" />
         </article>
 
-        <div style={{ padding: "2.5em 2em" }}>
+        <div>
           <p>LEADING MARKETPLACE</p>
           <p>
             As Luxury Originals is a leading marketplace for the luxury fashion
@@ -57,11 +57,11 @@ const About = () => {
         </div>
       </div>
 
-      <div className="div fub two omega">
+      <div className="div">
         <article>
           <img src=".\src\assets\Images\model-b.jpg" alt="" />
         </article>
-        <div style={{ padding: "2.5em 2em" }}>
+        <div>
           <p>WHY CHOOSE US?</p>
           <p>
             Why Choose Us At ASL ORIGINALS, we offer luxury apparel that shows
@@ -84,9 +84,6 @@ const About = () => {
         </div>
       </div>
 
-      <div>
-        
-      </div>
     </div>
   );
 };
