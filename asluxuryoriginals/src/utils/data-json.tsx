@@ -27,18 +27,30 @@ export const sublistContent: { [key in Link]?: string[] } = {
 };
 
 export const footerSections = [
-    {
-      header: "Customer Service",
-      links: ["Contact Us", "FAQs", "Order and Delivery", "Payment"],
-    },
-    {
-      header: "About",
-      links: ["About Us", "Careers", "Partner Boutiques", "Promotions"],
-    },
-    {
-      header: "Services",
-      links: ["Shipping Policy", "Privacy Policy", "Affiliates", "Cookie Policy"],
-    },
-  
-  ];
+  {
+    header: "Customer Service",
+    links: [
+      { name: "Contact Us", path: "/contact-us" },
+      { name: "FAQs", path: "/faqs" },
+      { name: "Terms and Service", path: "/terms-and-service" },
+    ],
+  },
+  {
+    header: "About",
+    links: [
+      { name: "About Us", path: "/about" },
+      { name: "Exchange Policy", path: "/exchange-policy" },
+      { name: "Refund Policy", path: "/refund-policy" },
+    ],
+  },
+  {
+    header: "Services",
+    links: [
+      { name: "Shipping Policy", path: "/shipping-policy" },
+      { name: "Privacy Policy", path: "/privacy-policy" },
+      { name: "Cookie Policy", path: "/cookie-policy" },
+    ],
+  },
+];
+
   
