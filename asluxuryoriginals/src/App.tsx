@@ -44,6 +44,8 @@ function App() {
           <Route path="/credits" element={<CreditsRefunds />} />
           <Route path="/security" element={<DetailsSecurity />} />
           <Route path="/sign" element={<SignInPage />} />
+          <Route path="/footwear/:category" element={<Footwear />} />
+          <Route path="/clothing/:category" element={<Clothing />} />
         </Route>
 
         
