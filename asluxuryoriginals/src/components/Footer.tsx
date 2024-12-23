@@ -12,11 +12,13 @@ export default function Footer() {
   return (
     <div className="text-black py-8 font-montserrat bg-gray-300">
       <div className="lg:flex-row flex flex-col lg:p-12 lg:m-0 m-8 lg:space-y-0 lg:space-y-6 space-y-3 lg:justify-between sm:items-center sm:justify-center">
+        {/* Brand Section */}
         <p className="text-2xl font-bold text-center">AS LUXURY ORIGINALS</p>
 
-        <div className="lg:flex lg:flex-col flex flex-row lg:space-y-3 lg:mr-20 mx-auto">
-          <p className="lg:text-lg font-semibold">Follow Us :</p>
-          <div className="flex items-center justify-center lg:space-x-6 space-x-3 lg:px-0 px-3">
+        {/* Social Links */}
+        <div className="flex flex-col lg:flex-row lg:items-center lg:space-y-0 lg:mr-20 space-y-3 mx-auto">
+          <p className="lg:text-lg font-semibold text-center">Follow Us:</p>
+          <div className="flex items-center justify-center space-x-6">
             <a href="#" className="hover:text-gray-400">
               <FaFacebookF size={20} />
             </a>
@@ -35,6 +37,8 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Footer Links Section */}
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {footerSections.map((section, index) => (
           <div key={index}>
@@ -50,11 +54,9 @@ export default function Footer() {
         ))}
       </div>
 
-      <div className="flex justify-between items-center text-center mt-8 text-sm text-black px-12">
-        <p className="mt-4">
-          © {new Date().getFullYear()} AS Luxury Originals. All rights
-          reserved.
-        </p>
+      {/* Footer Bottom Section */}
+      <div className="flex justify-center items-center mt-8 text-sm text-black px-12">
+        <p>© {new Date().getFullYear()} AS Luxury Originals. All rights reserved.</p>
       </div>
     </div>
   );

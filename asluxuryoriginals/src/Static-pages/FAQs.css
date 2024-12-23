@@ -40,7 +40,7 @@
 .faqs details[open] summary {
   font-size: clamp(12px, 3vw, 18px);
   background-color: #3d3b3b;
-  color: whitesmoke;
+  color: rgba(245, 245, 245, 0.941);
   border-radius: 0.4rem;
   margin-bottom: 18px;
 }

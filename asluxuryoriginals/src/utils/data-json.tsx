@@ -32,7 +32,7 @@ export const footerSections = [
     links: [
       { name: "Contact Us", path: "/contact-us" },
       { name: "FAQs", path: "/faqs" },
-      { name: "Terms and Service", path: "/terms-and-service" },
+      { name: "Terms and Service", path: "/terms-of-service" },
     ],
   },
   {
