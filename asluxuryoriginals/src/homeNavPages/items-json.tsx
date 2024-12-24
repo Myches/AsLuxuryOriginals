@@ -37,7 +37,7 @@ export const items = [
         title: "Yellow Party Chair",
         description: "College Coudroy Baseball Cap",
         price: 124,
-        category:"Underwears"
+        category:"Perfumes"
     },
     {
         img: image2,
