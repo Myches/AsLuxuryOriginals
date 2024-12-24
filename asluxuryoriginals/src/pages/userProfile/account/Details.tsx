@@ -90,6 +90,7 @@ const DetailsSecurity = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-6">
               Account Details & Security
             </h2>
+            
 
             {/* Personal Details Section */}
             <div className="bg-white rounded-xl shadow-md p-4 lg:p-6 mb-6">

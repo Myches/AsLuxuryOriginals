@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Signup } from "../../api/Api";
 // import { AlertCircle } from 'lucide-react';
 // import { Alert, AlertDescription } from '@/components/ui/alert';
 
@@ -40,6 +41,15 @@ const SignUpPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    try{
+          const data = await Signup (formData);
+          console.log("Sign-up successful:", data);
+          if (data.token) {
+            console.log("successful login");
+          }
+        }catch (error){
+          console.error("sign-in failed:", error)
+        }
     setError("");
 
     // Validation

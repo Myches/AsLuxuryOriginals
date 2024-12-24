@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Login, Signup } from "../../api/Api";
 
 const LoginModal = ({ isOpen, onClose, onLogin }) => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -17,8 +18,31 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const data = isSignUp
+        ? await Signup({
+          name: "",
+          username: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+          agreedToTerms: false,
+        })
+        : await Login({
+          username: "",
+          password: "",
+        });
+      if (data.access) {
+        localStorage.setItem("authToken", data.token);
+        onClose();
+      } else {
+        console.log("Sign-up successful:", data);
+      }
+    } catch (error) {
+      console.error("sign-in failed:", error);
+    }
 
     // Check if terms are agreed when signing up
     if (isSignUp && !formData.agreedToTerms) {

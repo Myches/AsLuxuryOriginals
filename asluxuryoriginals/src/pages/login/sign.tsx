@@ -1,5 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Login, } from "../../api/Api";
+
+// interface TokenResponse {
+//   access: string;
+//   refresh: string;
+//   token: string;
+// }
 
 const SignInPage = () => {
   const [formData, setFormData] = useState({
@@ -21,10 +28,19 @@ const SignInPage = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const data = await Login(formData);
+      console.log("Signing, successful:", data);
+      if (data.token) {
+        console.log("successful login");
+      }
+    } catch (error) {
+      console.error("sign-in failed:", error);
+    }
     // TODO: Implement actual login logic
-    console.log("Signing in:", formData);
+    // console.log("Signing in:", formData);
     // Example: After successful login
     // navigate('/dashboard');
   };
