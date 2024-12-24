@@ -46,6 +46,7 @@ function App() {
           <Route path="/sign" element={<SignInPage />} />
           <Route path="/footwear/:category" element={<Footwear />} />
           <Route path="/clothing/:category" element={<Clothing />} />
+          <Route path="/accessories/:category" element={<Accessories />} />
         </Route>
 
         

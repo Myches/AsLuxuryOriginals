@@ -1,14 +1,36 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { items } from './items-json';
 import { sublistContent } from '../utils/data-json';
 import FilterDropdown from './FilterDropdown';
 import ProductGrid from './ProductGrid';
 import UpdateSection from './UpdateSection';
 
+interface Product {
+  img: string;
+  title: string;
+  description: string;
+  price: number;
+  category?: string;
+}
+
 const Accessories = () => {
+  const { category } = useParams();
   const [selected, setSelected] = useState(0);
-  const [products, setProducts] = useState(items);
+  const [products, setProducts] = useState<Product[]>(items);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>(items);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    if (category) {
+      const filtered = items.filter(item => 
+        item.category?.toLowerCase() === category.toLowerCase()
+      );
+      setFilteredProducts(filtered);
+    } else {
+      setFilteredProducts(products);
+    }
+  }, [category, products]);
 
   const handleSelect = (index: number) => {
     setSelected(index);
@@ -38,6 +60,12 @@ const Accessories = () => {
 
       <div className="flex items-start justify-between relative">
         <div className="relative mb-12 flex-[0.75]">
+        <button
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="flex justify-between md:hidden bg-[#00000081] text-white rounded-lg px-5 py-2 w-full text-left"
+          >
+            <span>All Clothings</span> <span>{isDropdownOpen ? "▲" : "▼"}</span>
+          </button>
           <ul
             className="flex items-center flex-wrap gap-y-2"
           >
@@ -46,7 +74,7 @@ const Accessories = () => {
                 key={index}
                 className="border-2 border-[#5a5a5a60] rounded-lg px-5 py-2 mr-2.5"
               >
-                <Link to="">{filter}</Link>
+                <Link to={`/accessories/${filter.toLowerCase().replace(/\s+/g, "-")}`}>{filter}</Link>
               </li>
             ))}
           </ul>
@@ -58,7 +86,7 @@ const Accessories = () => {
         </div>
       </div>
 
-      <ProductGrid products={products} />
+      <ProductGrid products={filteredProducts} />
 
       <UpdateSection />
     </div>

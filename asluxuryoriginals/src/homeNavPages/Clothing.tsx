@@ -77,7 +77,7 @@ const { category } = useParams();
                 key={index} 
                 className={`border-2 ${
                   category?.toLowerCase() === filter.toLowerCase() 
-                    ? 'border-black bg-black text-white' 
+                    ? 'border-[#FF7F50] bg-[#FF7F50] text-white' 
                     : 'border-[#5a5a5a60]'
                 } rounded-lg px-5 py-2.5 mr-2.5`}
               >
