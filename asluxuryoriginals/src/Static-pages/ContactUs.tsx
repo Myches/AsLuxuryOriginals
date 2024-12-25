@@ -10,7 +10,7 @@ const ContactUs = () => {
 
         <div>
           <p>
-            At ASL ORIGINALS, we’re here to assist you with any questions or
+            At ASL ORIGINALS, we're here to assist you with any questions or
             concerns you may have. Whether you're shopping within Nigeria or
             ordering from anywhere around the world, our customer support team
             is dedicated to providing you with the best experience possible.

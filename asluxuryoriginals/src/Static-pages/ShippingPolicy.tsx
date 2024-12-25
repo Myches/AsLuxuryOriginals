@@ -1,12 +1,12 @@
 import "./RefundPolicy.css";
 
 const ShippingPolicy = () => {
-  document.title = "Refund Policy | AS Luxury Originals";
+  document.title = " Shipping Policy | AS Luxury Originals";
 
   return (
     <>
       <div className="ref-p">
-        <h1>REFUND POLICY</h1>
+        <h1>SHIPPING POLICY</h1>
 
         <div>
           <p>

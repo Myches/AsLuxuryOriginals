@@ -1,43 +1,49 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 .ref-p {
-  width: 90%;
-  /* border: 2px solid red; */
+  width: 87%;
+  margin: 0 auto;
 }
 
-.ref-p h1{
-  margin-top: 80px;
+.ref-p h1 {
+  margin-top: 100px;
   font-weight: 500;
   margin-bottom: 12px;
-  font-size: clamp(20px, 3vw, 28px);
+  font-size: clamp(20px, 3vw, 26px);
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.ref-p article{
+.ref-p article {
   padding-top: 1.5em;
 }
 
-.ref-p article:last-of-type{
+.ref-p article:last-of-type {
   padding-bottom: 2em;
 }
 
-.ref-p article p{
-    padding-bottom: 0.5em;
+.ref-p article p {
+  padding-bottom: 0.5em;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 .ref-p h3 {
-  font-size: clamp(19px, 3vw, 27px);
+  font-size: clamp(19px, 3vw, 24px);
   padding: 0.3em 0;
   font-weight: 500;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.ref-p p, .ref-p li {
-  font-size: clamp(14px, 3vw, 19px);
+.ref-p p,
+.ref-p li {
+  font-size: clamp(14px, 3vw, 16.5px);
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.ref-p span{
-    text-decoration: underline;
-    display: inline-block;
-    padding-bottom: 0.3em;
-    padding-right: 4px;
+.ref-p span {
+  text-decoration: underline;
+  display: inline-block;
+  padding-bottom: 0.3em;
+  padding-right: 4px;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .ref-p a {
@@ -45,10 +51,11 @@
   color: rgb(55, 55, 179);
   display: inline;
   word-wrap: break-word;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 @media (min-width: 768px) {
-  .ref-p h1{
-    margin-top: 245px;
+  .ref-p h1 {
+    margin-top: 190px;
   }
 }

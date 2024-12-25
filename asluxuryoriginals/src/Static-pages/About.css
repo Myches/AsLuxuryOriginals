@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
+.div:first-of-type{
+  margin: 69px auto 0 auto;
+}
 
-
-.div div{
+.div div {
   padding: 2.5em 2em;
 }
 
@@ -12,12 +15,14 @@
   color: #636161;
   line-height: 23px;
   font-weight: 600;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .div p:last-child {
   color: #696767;
   font-weight: 400;
   font-size: clamp(10.5px, 3vw, 20px);
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -26,10 +31,9 @@
     padding-bottom: 45px;
     width: 90%;
     margin: 0 auto;
-    /* place-self: center; */
   }
 
-  .div article{
+  .div article {
     width: 90%;
   }
 
@@ -37,16 +41,16 @@
     max-width: 550px;
   }
 
-  .text-r{
+  .text-r {
     flex-direction: row-reverse;
   }
 
-  .div:not(.text-r) article{
+  .div:not(.text-r) article {
     /* border: 2px solid brown; */
     padding-right: 23px;
   }
 
-  .div:last-of-type article{
+  .div:last-of-type article {
     width: fit-content;
     height: fit-content;
   }
@@ -72,7 +76,7 @@
     font-size: clamp(12px, 1vw, 16px);
   }
 
-  .div img{
+  .div img {
     max-width: 360px;
   }
 }

@@ -97,11 +97,10 @@ const FAQs = () => {
               tracking number. You can use this tracking number on the shipping
               carrier's website to check the status of your delivery. If you
               haven't received your tracking number, or if you experience any
-              issues, feel free to contact us at
+              issues, feel free to contact us at{" "}
               <a href="mailto:customerservice@asluxuryoriginals.com">
-                customerservice@asluxuryoriginals.com
+                customerservice@asluxuryoriginals.com.
               </a>
-              .
             </p>
           </details>
 
@@ -115,7 +114,7 @@ const FAQs = () => {
               You can request to cancel or modify your order within 24 hours of
               placing it. After that, we may have already processed or shipped
               your order, and changes may no longer be possible. To request a
-              cancellation or change, please contact us as soon as possible at
+              cancellation or change, please contact us as soon as possible at {" "}
               <a href="mailto:customerservice@asluxuryoriginals.com">
                 
                 customerservice@asluxuryoriginals.com
@@ -195,13 +194,13 @@ const FAQs = () => {
           >
             <summary>How do I contact customer service?</summary>
             <p>
-              If you have any questions or need assistance, you can reach us at
+              If you have any questions or need assistance, you can reach us at {" "}
               <a href="mailto:customerservice@asluxuryoriginals.com">
                 customerservice@asluxuryoriginals.com
               </a>
-              <br /> Our customer service team at
+              <br /> Our customer service team at {" "}
               <a href="mailto:customerservice@asluxuryoriginals.com">
-                customerservice@asluxuryoriginals.com
+                customerservice@asluxuryoriginals.com{" "}
               </a>
               is available to assist you during business hours (Monday to
               Friday, 9 AM - 7 PM).
@@ -218,7 +217,7 @@ const FAQs = () => {
             </summary>
             <p>
               If you notice that your shipping address is incorrect, please
-              contact us immediately at
+              contact us immediately at {" "}
               <a href="mailto:customerservice@asluxuryoriginals.com">
                 customerservice@asluxuryoriginals.com
               </a>
@@ -237,10 +236,9 @@ const FAQs = () => {
             <p>
               Yes, we offer wholesale and bulk purchasing options for businesses
               and resellers. If you're interested in placing a large order or
-              require a custom order, please reach out to our sales team at
+              require a custom order, please reach out to our sales team at {" "}
               <a href="mailto:wholesale@asluxuryoriginals.com">
-                
-                wholesale@asluxuryoriginals.com
+                wholesale@asluxuryoriginals.com {" "}
               </a>
               for more information.
             </p>

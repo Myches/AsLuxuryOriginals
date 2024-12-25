@@ -25,14 +25,14 @@ const PrivacyPolicy = () => {
                 We collect the following types of information to provide you
                 with the best possible shopping experience:
               </p>
-              <span>Personal Information</span> <br />
+              <span>Personal Information:</span>
               When you make a purchase or create an account with ASL ORIGINALS
               we collect personal details such as: Full name, Email address,
               Shipping and billing address, Phone number, and Payment details
               (credit/debit card number, billing address, etc.)
             </p>
             <p>
-              <span>Non-Personal Information</span> <br />
+              <span>Non-Personal Information:</span>
               We also collect non-personal data automatically, such as: IP
               address, Browser type and version, Device type, Pages visited on
               our website and Time spent on our website. This helps us analyze
@@ -47,29 +47,28 @@ const PrivacyPolicy = () => {
             <p>
               <p>We use your personal information for the following purposes</p>
               <p>
-                <span>Order Fulfillment</span> <br /> To process and complete
+                <span>Order Fulfillment</span>: To process and complete
                 your orders, including shipping, billing, and communication
                 regarding your purchase.
               </p>
             </p>
 
             <p>
-              <span>Customer Support</span> <br />
+              <span>Customer Support:</span> 
               To respond to inquiries, provide assistance, and address any
               issues related to your order or account.
             </p>
 
             <p>
-              <span>Marketing Communications</span> <br />
-              If you’ve subscribed to our newsletter or given consent, we may
+              <span>Marketing Communications:</span>
+              If you've subscribed to our newsletter or given consent, we may
               send you promotional emails, discounts, product updates, or
               special offers. You can opt-out of these communications at any
               time by following the unsubscribe link in our emails.
             </p>
 
             <p>
-              <span>Improving Our Services</span>
-              <br />
+              <span>Improving Our Services:</span>
               To enhance the user experience on our website and improve our
               products, services, and customer support based on your preferences
               and feedback.
@@ -83,7 +82,7 @@ const PrivacyPolicy = () => {
                 We take your privacy seriously and have implemented security
                 measures to protect your personal information. These include:
               </p>
-              <span>Encryption</span>: We use SSL (Secure Socket Layer)
+              <span>Encryption:</span> We use SSL (Secure Socket Layer)
               technology to encrypt sensitive information, such as payment
               details, during transmission.
             </p>
