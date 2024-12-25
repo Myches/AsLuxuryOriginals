@@ -16,7 +16,7 @@ export default function Footer() {
         <p className="text-2xl font-bold text-center">AS LUXURY ORIGINALS</p>
 
         {/* Social Links */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:space-y-0 lg:mr-20 space-y-3 mx-auto">
+        <div className='lg:flex lg:flex-col flex flex-row lg:space-y-3 lg:mr-20 mx-auto'>
           <p className="lg:text-lg font-semibold text-center">Follow Us:</p>
           <div className="flex items-center justify-center space-x-6">
             <a href="#" className="hover:text-gray-400">
