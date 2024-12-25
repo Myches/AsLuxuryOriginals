@@ -55,7 +55,7 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom Section */}
-      <div className="flex justify-center items-center mt-8 text-sm text-black px-12">
+      <div className="flex justify-between items-center text-center mt-8 text-sm text-black px-12">
         <p>© {new Date().getFullYear()} AS Luxury Originals. All rights reserved.</p>
       </div>
     </div>
