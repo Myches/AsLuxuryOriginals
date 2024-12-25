@@ -1,3 +1,4 @@
+
 import { useLocation } from "react-router-dom";
 import { Product } from "../types/data-types";
 

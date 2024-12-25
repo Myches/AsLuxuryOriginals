@@ -1,4 +1,4 @@
-import  { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const UserMenu = () => {
@@ -31,10 +31,10 @@ const UserMenu = () => {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex hiddene items-center justify-center  rounded-lg  text-center hover:bg-gray-100 focus:outline-none"
+        className="flex hiddeni items-center justify-center  rounded-lg  text-center hover:bg-gray-100 focus:outline-none"
       >
         {" "}
-        <p className="pr-2 px-">User Profile</p>
+        <p className="pr-1 text-sm blur-sm"> Profile</p>
         <svg
           className="w-6 h-auto mb-1 text-gray-700"
           fill="none"

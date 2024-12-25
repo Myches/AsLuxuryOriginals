@@ -1,0 +1,42 @@
+
+
+
+.tos {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.tos h1{
+  margin-top: -13px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  font-size: clamp(20px, 3vw, 24.5px);
+
+}
+
+.tos article{
+  padding-top: 1.5em;
+}
+
+.tos h3 {
+  font-size: clamp(18px, 3vw, 20px);
+  padding: 0.3em 0;
+}
+
+.tos p {
+  font-size: clamp(14px, 3vw, 16.5px);
+}
+
+.tos a {
+  text-decoration: underline;
+  color: rgb(55, 55, 179);
+  display: inline;
+  word-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+  .tos h1{
+    margin-top: 6px;
+  }
+}
+

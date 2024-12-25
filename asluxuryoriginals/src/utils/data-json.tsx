@@ -14,7 +14,8 @@ export const links: LinkType[] = [
 ];
 
 export const sublistContent: { [key in LinkType]?: string[] } = {
-  Footwear: ["Sneakers & Trainers", "Flip Flops & Sliders", "Shoes & Sandals"],
+  Fragrances: ["Perfumes", "Body Mists", "Deodorants"],
+  Footwear: ["Sneakers", "Sliders", "Sandals"],
   Accessories: [
     "Sunglasses",
     "Hats & Caps",
@@ -23,7 +24,7 @@ export const sublistContent: { [key in LinkType]?: string[] } = {
     "Watches",
   ],
   Clothing: [
-    "T-Shirts",
+    "T Shirts",
     "Tops",
     "Polo Shirts",
     "Sweatshirts",
@@ -38,20 +39,6 @@ export const sublistContent: { [key in LinkType]?: string[] } = {
 };
 
 
-export const footerSections = [
-  {
-    header: "Customer Service",
-    links: ["Contact Us", "FAQs", "Order and Delivery", "Payment"],
-  },
-  {
-    header: "About",
-    links: ["About Us", "Careers", "Partner Boutiques", "Promotions"],
-  },
-  {
-    header: "Services",
-    links: ["Shipping Policy", "Privacy Policy", "Affiliates", "Cookie Policy"],
-  },
-];
 
 export const products: Product[] = [
   { id: 1, name: "Men's Slim Fit T-Shirt", category: "Clothing", price: 19.99, image: "https://example.com/images/mens-slim-fit-tshirt.jpg" },
@@ -95,3 +82,35 @@ export const products: Product[] = [
   { id: 39, name: "Men's Wool Sweater", category: "Clothing", price: 59.99, image: "https://example.com/images/mens-wool-sweater.jpg" },
   { id: 40, name: "Women's Denim Shorts", category: "Clothing", price: 34.99, image: "https://example.com/images/womens-denim-shorts.jpg" },
 ];
+
+
+export const footerSections = [
+  {
+    header: "Customer Service",
+    links: [
+      { name: "Contact Us", path: "/contact-us" },
+      { name: "FAQs", path: "/faqs" },
+      { name: "Terms and Service", path: "/terms-of-service" },
+    ],
+  },
+  {
+    header: "About",
+    links: [
+      { name: "About Us", path: "/about" },
+      { name: "Exchange Policy", path: "/exchange-policy" },
+      { name: "Refund Policy", path: "/refund-policy" },
+    ],
+  },
+  {
+    header: "Services",
+    links: [
+      { name: "Shipping Policy", path: "/shipping-policy" },
+      { name: "Privacy Policy", path: "/privacy-policy" },
+      { name: "Cookie Policy", path: "/cookie-policy" },
+    ],
+  },
+];
+
+
+  
+
