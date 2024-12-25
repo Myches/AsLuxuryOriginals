@@ -1,0 +1,67 @@
+
+.faqs {
+  width: 90%;
+  margin: 60px auto 0 auto;
+}
+
+.faqs a {
+  text-decoration: underline;
+  color: blue;
+}
+
+.faqs h2 {
+  font-size: clamp(18px, 3vw, 36px);
+  margin: 13px 0 22px 0;
+}
+
+.faqs details {
+  margin-bottom: 9px;
+}
+
+.faqs details:last-of-type {
+  margin-bottom: 50px;
+}
+
+.faqs details summary {
+  font-size: clamp(12px, 3vw, 18px);
+  font-weight: 600;
+  background-color: #343232;
+  padding: 1em 1em;
+  color: whitesmoke;
+  border-radius: 0.4rem;
+  margin-bottom: 10px;
+}
+
+.faqs details[open] summary {
+  font-size: clamp(12px, 3vw, 18px);
+  background-color: #3d3b3b;
+  color: rgba(245, 245, 245, 0.941);
+  border-radius: 0.4rem;
+  margin-bottom: 18px;
+}
+
+.faqs details p,
+.faqs details li {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: black;
+  border-radius: 5px;
+  font-size: clamp(10.5px, 3vw, 20px);
+  margin: 0 0 12px 12px;
+}
+
+.faqs details li {
+  list-style: decimal;
+  padding-left: 0.5em;
+}
+
+.faqs details li:last-child,
+.faqs details p:last-child {
+  margin-bottom: 33px;
+}
+
+@media (min-width: 768px) {
+  .faqs {
+    margin-top: 225px;
+  }
+}
