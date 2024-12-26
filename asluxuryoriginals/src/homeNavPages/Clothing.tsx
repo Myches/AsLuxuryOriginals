@@ -17,33 +17,33 @@ interface Product {
 const Clothing = () => {
   const { category } = useParams();
   const [selected, setSelected] = useState(0);
-  const [products, setProducts] = useState<Product[]>(items);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>(items);
+  const [products, setProducts] = useState<Product[]>(items.results);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>(items.results);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     if (category) {
-      const filtered = items.filter(item => 
-        item.category?.toLowerCase() === category.toLowerCase()
+      const filtered = items.results.filter(
+        (item) => item.category?.toLowerCase() === category.toLowerCase()
       );
       setFilteredProducts(filtered);
     } else {
       setFilteredProducts(products);
     }
-    console.log(category)
+    console.log(category);
   }, [category, products]);
 
   const handleSelect = (index: number) => {
     setSelected(index);
 
     if (index === 2) {
-      const sortedItems = [...items].sort((a, b) => b.price - a.price);
+      const sortedItems = [...items.results].sort((a, b) => b.price - a.price);
       setProducts(sortedItems);
     } else if (index === 3) {
-      const sortedItems = [...items].sort((a, b) => a.price - b.price);
+      const sortedItems = [...items.results].sort((a, b) => a.price - b.price);
       setProducts(sortedItems);
     } else {
-      setProducts(items);
+      setProducts(items.results);
     }
   };
 

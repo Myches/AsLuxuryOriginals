@@ -17,7 +17,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products }) => (
     {products.map((product, index) => (
       <article key={index} className="relative">
         <Link to={`#`}>
-            <img src={product.img} alt={product.title} />
+            <img src={product.img} alt={product.title} className='h-[250px]' />
             <h4 className='mb-2 font-bold'>{product.title}</h4>
             <p className='description mb-2'>{product.description}</p>
             <p className='mb-2'>${product.price}</p>
