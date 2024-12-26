@@ -20,84 +20,88 @@ const PrivacyPolicy = () => {
 
           <article>
             <h3>Information We Collect</h3>
-            <p>
+            <div>
               <p>
                 We collect the following types of information to provide you
                 with the best possible shopping experience:
               </p>
-              <span>Personal Information:</span>
-              When you make a purchase or create an account with ASL ORIGINALS
-              we collect personal details such as: Full name, Email address,
-              Shipping and billing address, Phone number, and Payment details
-              (credit/debit card number, billing address, etc.)
-            </p>
-            <p>
-              <span>Non-Personal Information:</span>
+              <div>
+                <strong>Personal Information:</strong>
+                When you make a purchase or create an account with ASL ORIGINALS
+                we collect personal details such as: Full name, Email address,
+                Shipping and billing address, Phone number, and Payment details
+                (credit/debit card number, billing address, etc.)
+              </div>
+            </div>
+            <div>
+              <strong>Non-Personal Information:</strong>
               We also collect non-personal data automatically, such as: IP
               address, Browser type and version, Device type, Pages visited on
               our website and Time spent on our website. This helps us analyze
               website traffic, improve user experience, and tailor our services
               to your needs
-            </p>
+            </div>
           </article>
 
           <article>
             <h3>How We Use Your Information</h3>
 
-            <p>
-              <p>We use your personal information for the following purposes</p>
-              <p>
-                <span>Order Fulfillment</span>: To process and complete
+            <div>
+              <p>We use your personal information for the following purposes:</p>
+              <div>
+                <strong>Order Fulfillment</strong>: To process and complete
                 your orders, including shipping, billing, and communication
                 regarding your purchase.
-              </p>
-            </p>
+              </div>
+            </div>
 
-            <p>
-              <span>Customer Support:</span> 
+            <div>
+              <strong>Customer Support:</strong> 
               To respond to inquiries, provide assistance, and address any
               issues related to your order or account.
-            </p>
+            </div>
 
-            <p>
-              <span>Marketing Communications:</span>
+            <div>
+              <strong>Marketing Communications:</strong>
               If you've subscribed to our newsletter or given consent, we may
               send you promotional emails, discounts, product updates, or
               special offers. You can opt-out of these communications at any
               time by following the unsubscribe link in our emails.
-            </p>
+            </div>
 
-            <p>
-              <span>Improving Our Services:</span>
+            <div>
+              <strong>Improving Our Services:</strong>
               To enhance the user experience on our website and improve our
               products, services, and customer support based on your preferences
               and feedback.
-            </p>
+            </div>
           </article>
 
           <article>
             <h3>How We Protect Your Information</h3>
-            <p>
+            <div>
               <p>
                 We take your privacy seriously and have implemented security
                 measures to protect your personal information. These include:
               </p>
-              <span>Encryption:</span> We use SSL (Secure Socket Layer)
-              technology to encrypt sensitive information, such as payment
-              details, during transmission.
-            </p>
+              <div>
+                <strong>Encryption:</strong> We use SSL (Secure Socket Layer)
+                technology to encrypt sensitive information, such as payment
+                details, during transmission.
+              </div>
+            </div>
 
-            <p>
-              <span>Access Control</span>: Only authorized personnel have access
+            <div>
+              <strong>Access Control:</strong> Only authorized personnel have access
               to your personal data, and we ensure they are trained to handle it
               responsibly.
-            </p>
+            </div>
 
-            <p>
-              <span>Regular Security Audits</span>: We perform regular security
+            <div>
+              <strong>Regular Security Audits:</strong> We perform regular security
               checks to detect vulnerabilities and ensure your data is safe from
               unauthorized access.
-            </p>
+            </div>
           </article>
 
           <article>
@@ -108,28 +112,28 @@ const PrivacyPolicy = () => {
               information with trusted third-party service providers for
               specific purposes, such as:
             </p>
-            <p>
-              <span>Payment Processors:</span> To process payments securely and
+            <div>
+              <strong>Payment Processors:</strong> To process payments securely and
               efficiently
-            </p>
-            <p>
-              <span>Shipping Partners:</span> To fulfill your orders and deliver
+            </div>
+            <div>
+              <strong>Shipping Partners:</strong> To fulfill your orders and deliver
               products to your address.
-            </p>
+            </div>
 
-            <p>
-              <span>Marketing Services</span>: If you have opted into our
+            <div>
+              <strong>Marketing Services:</strong> If you have opted into our
               marketing communications, we may work with trusted partners to
               help manage and improve our email campaigns.
-            </p>
+            </div>
 
-            <p>
-              <span> Legal Compliance:</span> We may disclose your information
+            <div>
+              <strong>Legal Compliance:</strong> We may disclose your information
               if required by law, such as in response to a court order or legal
               process. These third-party providers are obligated to handle your
               data with the same level of security and confidentiality that we
               uphold.
-            </p>
+            </div>
           </article>
 
           <article>
@@ -137,7 +141,7 @@ const PrivacyPolicy = () => {
             <p>
               We use cookies and similar technologies to enhance your browsing
               experience and gather data on how you interact with our website.
-              Cookies are small files stored on your device that help us
+              Cookies are small files stored on your device that help us:
             </p>
 
             <p>
@@ -159,28 +163,28 @@ const PrivacyPolicy = () => {
               As a customer, you have the following rights regarding your
               personal information:
             </p>
-            <p>
-              <span>Access and Correction</span>: You can request access to the
+            <div>
+              <strong>Access and Correction:</strong> You can request access to the
               personal information we hold about you and request corrections or
               updates.
-            </p>
-            <p>
-              <span>Data Deletion</span>: You may request the deletion of your
+            </div>
+            <div>
+              <strong>Data Deletion:</strong> You may request the deletion of your
               personal data, subject to certain exceptions (such as legal
               obligations).
-            </p>
+            </div>
 
-            <p>
-              <span>Marketing Preferences:</span> You can opt-out of receiving
+            <div>
+              <strong>Marketing Preferences:</strong> You can opt-out of receiving
               marketing communications from us at any time by clicking the
               "unsubscribe" link in our emails or contacting us directly.
-            </p>
+            </div>
 
             <p>
               To exercise any of these rights, please contact our customer
               service team at{" "}
               <a href="mailto:customerservice@asluxuryoriginals.com">
-                customerservice@asluxuryoriginals.com.
+                customerservice@asluxuryoriginals.com
               </a>
             </p>
           </article>
@@ -204,9 +208,12 @@ const PrivacyPolicy = () => {
               we encourage you to review it periodically.
             </p>
 
-            <p>If you have any questions or concerns about how we handle your personal information, or if you would like to exercise any of your rights under this policy, please contact us at <a href="mailto:customerservice@asluxuryoriginals.com">
+            <p>
+              If you have any questions or concerns about how we handle your personal information, or if you would like to exercise any of your rights under this policy, please contact us at{" "}
+              <a href="mailto:customerservice@asluxuryoriginals.com">
                 customerservice@asluxuryoriginals.com
-              </a></p>
+              </a>
+            </p>
           </article>
         </div>
       </div>
