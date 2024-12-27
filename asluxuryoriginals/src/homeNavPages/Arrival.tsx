@@ -33,7 +33,7 @@ const NewArrivals = () => {
 
   
   return (
-    <div className="pt-[100px] md:pt-[200px] mx-5 md:mx-16 text-sm sm:text-base leading-[1.5]">
+    <div className=" mx-5 md:mx-16 text-sm sm:text-base leading-[1.5]">
       <div className='mb-10'>
         <h3 className="uppercase text-[35px] font-medium mb-2.5">New Arrivals for you</h3>
         <p>Elevate your wardrobe this Yuletide season and New Year with the stunning new arrivals from Asluxury’s exclusive collection of men’s designer fashion.</p>

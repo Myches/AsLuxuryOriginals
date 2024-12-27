@@ -13,18 +13,19 @@ interface Product {
     description: string;
     price: number;
     category?: string;
+    
   }
 
 
 const Home = () => {
-    const [products, setProducts] = useState<Product[]>(items.results);
-
+    
+    const [products] = useState<Product[]>(items.results);
     const topProducts = products.slice(0, 8)
     const arrivalProducts = products.slice(8, 16)
 
 
     return (
-        <div className="pt-[100px] md:pt-[200px] mx-5 md:mx-16 text-sm sm:text-base leading-[1.5]">
+        <div className=" mx-5 md:mx-16 text-sm sm:text-base leading-[1.5]">
             <div className='mb-20'>
                 <div className="flex items-center justify-between gap-4 mb-10">
                     <p className='flex-[0_0_65%]'>Selected Yuletide and New Year season pieces. T&Cs apply, discount applied at checkout.</p>

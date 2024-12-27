@@ -53,7 +53,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full h-auto sticky top-0 border-b border-gray-200 bg-white z-50 pt-3 font-montserrat">
+    <nav className="w-full h-auto sticky top-0 border-b border-gray-200 bg-white z-50 pt-3 font-montserrat ">
       <div className="flex flex-col space-y-5">
         {/* Top Bar */}
         <div className="relative flex items-center p-4 lg:px-16">

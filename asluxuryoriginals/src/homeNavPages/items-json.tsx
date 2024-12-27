@@ -90,8 +90,22 @@
 //     },
 // ]
 
-
-export const items = {
+interface Item {
+    img: string;
+    title: string;
+    description: string;
+    price: number;
+    category: string;
+  }
+  
+  interface Items {
+    count: number;
+    next: string | null;
+    previous: string | null;
+    results: Item[];
+  }
+  
+  export const items: Items = {
     count: 24,
     next: null,
     previous: null,

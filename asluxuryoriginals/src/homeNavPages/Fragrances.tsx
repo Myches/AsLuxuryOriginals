@@ -19,7 +19,7 @@ interface Product {
 const Fragrances = () => {
   const { category } = useParams();
   const [selected, setSelected] = useState(0);
-  const [products, setProducts] = useState<Product[]>(items.results);
+  const [products] = useState<Product[]>(items.results);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(items.results);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -53,7 +53,7 @@ const Fragrances = () => {
   const fragrancesFilters = sublistContent.Fragrances || [];
 
   return (
-    <div className="pt-[100px] md:pt-[200px] mx-5 md:mx-16 text-sm sm:text-base leading-[1.5]">
+    <div className=" mx-5 md:mx-16 text-sm sm:text-base leading-[1.5]">
       <div className="mb-10">
         <h3 className="uppercase text-[35px] font-medium mb-2.5 text-[#774998]">
         {category ? `${category} Collection` : 'Fresh scents for you'}
