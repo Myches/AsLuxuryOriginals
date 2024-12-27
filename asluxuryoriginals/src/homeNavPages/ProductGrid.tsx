@@ -13,7 +13,7 @@ interface ProductGridProps {
 }
 
 const ProductGrid: React.FC<ProductGridProps> = ({ products }) => (
-  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-20 gap-y-10 mb-20">
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-20 gap-x-8 gap-y-10 mb-20">
     {products.map((product, index) => (
       <article key={index} className="relative">
         <Link to={`#`}>
