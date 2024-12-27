@@ -14,7 +14,8 @@ export const links: LinkType[] = [
 ];
 
 export const sublistContent: { [key in LinkType]?: string[] } = {
-  Footwear: ["Sneakers & Trainers", "Flip Flops & Sliders", "Shoes & Sandals"],
+  Fragrances: ["Perfumes", "Body Mists", "Deodorants"],
+  Footwear: ["Sneakers", "Sliders", "Sandals"],
   Accessories: [
     "Sunglasses",
     "Hats & Caps",
@@ -23,7 +24,7 @@ export const sublistContent: { [key in LinkType]?: string[] } = {
     "Watches",
   ],
   Clothing: [
-    "T-Shirts",
+    "T Shirts",
     "Tops",
     "Polo Shirts",
     "Sweatshirts",

@@ -3,7 +3,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './layout/MainLayout';
 import AuthLayout from './layout/AuthLayout';
-import './App.css';
 import NotFound from './pages/NotFound';
 import SearchResults from './pages/SearchResults';
 import FilterResults from './components/FilterResults';
@@ -23,16 +22,18 @@ import PrivacyPolicy from "./Static-pages/PrivacyPolicy";
 import CookiePolicy from "./Static-pages/CookiePolicy";
 import ExchangePolicy from "./Static-pages/ExchangePolicy";
 import ContactUs from "./Static-pages/ContactUs";
+import Footwear from './homeNavPages/Footwear';
+import Fragrances from './homeNavPages/Fragrances';
+import Accessories from './homeNavPages/Accessories';
+import NewArrivals from './homeNavPages/Arrival';
+import Clothing from './homeNavPages/Clothing';
+import Home from './homeNavPages/HomePage';
+
 
 
 function App() {
   // Static pages defined inline
-  const Home = () => <div>Home Page</div>;
-  const Fragrances = () => <div>Fragrances Page</div>;
-  const NewArrivals = () => <div>New Arrivals Page</div>;
-  const Clothing = () => <div>Clothing Page</div>;
-  const Footwear = () => <div>Footwear Page</div>;
-  const Accessories = () => <div>Accessories Page</div>;
+
 
 
   return (
@@ -63,6 +64,10 @@ function App() {
           <Route path="/credits" element={<CreditsRefunds />} />
           <Route path="/security" element={<DetailsSecurity />} />
           <Route path="/sign" element={<SignInPage />} />
+          <Route path="/footwear/:category" element={<Footwear />} />
+          <Route path="/clothing/:category" element={<Clothing />} />
+          <Route path="/accessories/:category" element={<Accessories />} />
+          <Route path="/fragrances/:category" element={<Fragrances />} />
         </Route>
 
 
