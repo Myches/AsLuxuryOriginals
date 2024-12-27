@@ -8,7 +8,7 @@ import UpdateSection from './UpdateSection';
 const NewArrivals = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState(0);
-  const [products, setProducts] = useState(items)
+  const [products, setProducts] = useState(items.results)
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -21,13 +21,13 @@ const NewArrivals = () => {
     }, 500);
 
     if (index === 2) {
-      const sortedItems = [...items].sort((a, b) => b.price - a.price);
+      const sortedItems = [...items.results].sort((a, b) => b.price - a.price);
       setProducts(sortedItems);
     } else if (index === 3) {
-      const sortedItems = [...items].sort((a, b) => a.price - b.price);
+      const sortedItems = [...items.results].sort((a, b) => a.price - b.price);
       setProducts(sortedItems);
     } else {
-      setProducts(items);
+      setProducts(items.results);
     }
   };
 

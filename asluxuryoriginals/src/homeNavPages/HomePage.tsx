@@ -1,13 +1,28 @@
+import { useState } from 'react'
+import ProductGrid from './ProductGrid'
 import { Link } from 'react-router-dom'
 import { items } from './items-json'
-import HoverHeart from './Heart'
 import arrival from './img/arrival.jpg'
 import { AiOutlineQuestionCircle, AiOutlineMail } from "react-icons/ai";
 import { FaTshirt } from "react-icons/fa";
 import UpdateSection from './UpdateSection'
 
+interface Product {
+    img: string;
+    title: string;
+    description: string;
+    price: number;
+    category?: string;
+  }
+
 
 const Home = () => {
+    const [products, setProducts] = useState<Product[]>(items.results);
+
+    const topProducts = products.slice(0, 8)
+    const arrivalProducts = products.slice(8, 16)
+
+
     return (
         <div className="pt-[100px] md:pt-[200px] mx-5 md:mx-16 text-sm sm:text-base leading-[1.5]">
             <div className='mb-20'>
@@ -15,22 +30,10 @@ const Home = () => {
                     <p className='flex-[0_0_65%]'>Selected Yuletide and New Year season pieces. T&Cs apply, discount applied at checkout.</p>
                     <Link to={'/'} className="border border-black rounded-lg px-4 py-2 text-base font-bold transition-all duration-200 hover:text-white hover:bg-black hover:-translate-y-1 hover:shadow-md">Shop Now</Link>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-20 gap-y-10">
-                    {items.map((item) => {
-                        return (
-                            <article className='relative'>
-                                <Link to=''>
-                                    <img src={item.img} />
-                                    <h4 className='mb-2 font-bold'>{item.title}</h4>
-                                    <p className='description mb-2'>{item.description}</p>
-                                    <p className='mb-2'>${item.price}</p>
-                                    <HoverHeart />
-                                </Link>
-                            </article>
-                        )
-                    })}
+                <div>
+                    <ProductGrid products={topProducts} />
+                    <Link to='' className="inline-block mt-5 rounded-lg bg-gray-300/20 px-5 py-2 transition-all duration-200 hover:text-white hover:bg-black hover:translate-y-[-5px] hover:shadow-lg">See More &gt;&gt;&gt;</Link>
                 </div>
-                <Link to='' className="inline-block mt-5 rounded-lg bg-gray-300/20 px-5 py-2 transition-all duration-200 hover:text-white hover:bg-black hover:translate-y-[-5px] hover:shadow-lg">See More &gt;&gt;&gt;</Link>
             </div>
             
             <div className='mb-20'>
@@ -43,31 +46,19 @@ const Home = () => {
                     <p className='flex-[0_0_65%]'>Shop the latest trends and stylish arrivals! Elevate your look and stay ahead in fashion with pieces everyone loves. Shop now!</p>
                     <Link to={'/'} className="border border-black rounded-lg px-4 py-2 text-base font-bold transition-all duration-200 hover:text-white hover:bg-black hover:-translate-y-1 hover:shadow-md">Shop Now</Link>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-20 gap-y-10">
-                    {items.map((item) => {
-                        return (
-                            <article>
-                                <Link to=''>
-                                    <img src={item.img} alt='' />
-                                    <h4>{item.title}</h4>
-                                    <p className='description'>{item.description}</p>
-                                    <p>${item.price}</p>
-                                    <HoverHeart />
-                                </Link>
-                            </article>
-                        )
-                    })}
+                <div>
+                    <ProductGrid products={arrivalProducts} />
+                    <Link to='./new-arrivals' className="inline-block mt-5 rounded-lg bg-gray-300/20 px-5 py-2 transition-all duration-200 hover:text-white hover:bg-black hover:translate-y-[-5px] hover:shadow-lg">See More &gt;&gt;&gt;</Link>
                 </div>
-                <Link to='' className="inline-block mt-5 rounded-lg bg-gray-300/20 px-5 py-2 transition-all duration-200 hover:text-white hover:bg-black hover:translate-y-[-5px] hover:shadow-lg">See More &gt;&gt;&gt;</Link>
             </div>
 
             <div className='mb-20'>
                 <h2 className='text-center uppercase text-4xl font-medium tracking-[10px] mb-5'>Trending items</h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-20 gap-y-10">
-                    {items.map((item) => {
+                    {products.slice(16,20).map((item) => {
                         return (
                             <article>
-                                <img src={item.img} />
+                                <img src={item.img} className='h-[400px]' />
                                 <h4 className='font-[500] uppercase'>{item.title}</h4>
                             </article>
                         )

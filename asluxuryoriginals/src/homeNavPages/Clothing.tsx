@@ -24,7 +24,7 @@ const Clothing = () => {
   useEffect(() => {
     if (category) {
       const filtered = items.results.filter(
-        (item) => item.category?.toLowerCase() === category.toLowerCase()
+        (item) => item.category?.toLowerCase().replace(/\s+/g, "-") === category.toLowerCase()
       );
       setFilteredProducts(filtered);
     } else {
@@ -35,16 +35,16 @@ const Clothing = () => {
 
   const handleSelect = (index: number) => {
     setSelected(index);
-
+  
+    const sortedProducts = [...filteredProducts]; 
+  
     if (index === 2) {
-      const sortedItems = [...items.results].sort((a, b) => b.price - a.price);
-      setProducts(sortedItems);
+      sortedProducts.sort((a, b) => b.price - a.price);
     } else if (index === 3) {
-      const sortedItems = [...items.results].sort((a, b) => a.price - b.price);
-      setProducts(sortedItems);
-    } else {
-      setProducts(items.results);
+      sortedProducts.sort((a, b) => a.price - b.price);
     }
+  
+    setFilteredProducts(sortedProducts);
   };
 
   const clothingFilters = sublistContent.Clothing || [];
@@ -198,47 +198,3 @@ export default Clothing;
 // };
 
 // export default Clothing;
-
-
-
-{/* <ul
-  className={`${
-    isDropdownOpen ? "block" : "hidden"
-  } absolute top-full left-0 w-full bg-white z-50 shadow-lg border-t-2 border-gray-300 md:relative md:top-auto md:w-auto md:bg-transparent md:shadow-none md:block md:flex md:items-center md:flex-wrap md:gap-y-2 md:mt-0 md:border-t-0`}
->
-  {clothingFilters.map((filter: string, index: number) => (
-    <li
-      key={index}
-      onClick={() => handleFilterClick(index)} // Handle click to set active state
-      className={`border-b-2 md:border-2 md:rounded-lg px-5 py-2 mr-0 md:mr-2.5 cursor-pointer ${
-        activeFilterIndex === index
-          ? "text-blue-500 font-bold border-blue-500"
-          : "text-gray-700"
-      }`}
-    >
-      {filter}
-    </li>
-  ))}
-</ul> */}
-
-
-
-{/* <ul
-  className={`${
-    isDropdownOpen ? "block" : "hidden"
-  } absolute top-full left-0 w-full bg-white z-50 shadow-lg border-t-2 border-gray-300 md:relative md:top-auto md:w-auto md:bg-transparent md:shadow-none md:block md:flex md:items-center md:flex-wrap md:gap-y-2 md:mt-0 md:border-t-0`}
->
-  {clothingFilters.map((filter: string, index: number) => (
-    <li
-      key={index}
-      onClick={() => handleFilterClick(index)} // Handle click to set active state
-      className={`border-b-2 md:border-2 md:rounded-lg px-5 py-2 mr-0 md:mr-2.5 cursor-pointer ${
-        activeFilterIndex === index
-          ? "text-blue-500 font-bold border-blue-500"
-          : "text-gray-700"
-      }`}
-    >
-      {filter}
-    </li>
-  ))}
-</ul> */}

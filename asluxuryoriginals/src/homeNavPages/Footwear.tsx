@@ -17,40 +17,36 @@ interface Product {
 const Footwear = () => {
   const { category } = useParams();
   const [selected, setSelected] = useState(0);
-  const [products, setProducts] = useState<Product[]>(items);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>(items);
+  const [products, setProducts] = useState<Product[]>(items.results);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>(items.results);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const FootwearFilters = sublistContent.Footwear || [];
 
   useEffect(() => {
     if (category) {
-      const filtered = items.filter(item => 
-        item.category?.toLowerCase() === category.toLowerCase()
+      const filtered = items.results.filter(
+        (item) => item.category?.toLowerCase().replace(/\s+/g, "-") === category.toLowerCase()
       );
       setFilteredProducts(filtered);
     } else {
       setFilteredProducts(products);
     }
+    console.log(category);
   }, [category, products]);
 
   const handleSelect = (index: number) => {
     setSelected(index);
-
-    let sortedItems = [...filteredProducts];
-    switch(index) {
-      case 2:
-        sortedItems.sort((a, b) => b.price - a.price);
-        break;
-      case 3:
-        sortedItems.sort((a, b) => a.price - b.price);
-        break;
-      default:
-        sortedItems = category ? 
-          items.filter(item => item.category?.toLowerCase() === category.toLowerCase()) :
-          items;
+  
+    const sortedProducts = [...filteredProducts]; 
+  
+    if (index === 2) {
+      sortedProducts.sort((a, b) => b.price - a.price);
+    } else if (index === 3) {
+      sortedProducts.sort((a, b) => a.price - b.price);
     }
-    setProducts(sortedItems);
+  
+    setFilteredProducts(sortedProducts);
   };
 
   return (
