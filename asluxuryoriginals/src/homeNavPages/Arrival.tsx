@@ -42,10 +42,10 @@ const NewArrivals = () => {
       <div className='flex items-start justify-between relative'>
         <ul className="flex items-center mb-12">
             {/* <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to='' className="flex justify-between items-center font-medium"><span className='mr-2.5'>All Filters</span><MdFilterList size={25} /></Link></li> */}
-            <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to=''>Fragrances</Link></li>
-            <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to=''>Clothings</Link></li>
-            <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to=''>Footwears</Link></li>
-            <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to=''>Accessories</Link></li>
+            <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to='/fragrances' className='text-gray-500 bg-transparent px-4 py-2 rounded hover:text-gray-700 active:text-black active:bg-white'>Fragrances</Link></li>
+            <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to='/clothing' className='text-gray-500 bg-transparent px-4 py-2 rounded hover:text-gray-700 active:text-black active:bg-white'>Clothings</Link></li>
+            <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to='/footwear' className='text-gray-500 bg-transparent px-4 py-2 rounded hover:text-gray-700 active:text-black active:bg-white'>Footwears</Link></li>
+            <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to='/accessories' className='text-gray-500 bg-transparent px-4 py-2 rounded hover:text-gray-700 active:text-black active:bg-white'>Accessories</Link></li>
         </ul>
         <div className='flex flex-col items-end absolute right-0 z-10'>
           <button onClick={toggleDropdown} className='flex py-2 px-4 mb-5 rounded-md hover:bg-gray-200'>
