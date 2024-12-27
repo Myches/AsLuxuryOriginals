@@ -1,6 +1,9 @@
-
+@import url(https://db.onlinewebfonts.com/c/ccdb598c7dd2100f5f7a8c1296c1dcfe?family=Farfetch+Basis+Regular);
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Farfetch Basis Regular";
+}

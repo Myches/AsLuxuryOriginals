@@ -39,8 +39,13 @@ export default function Navbar() {
     setMenuOpen(false);
   };
 
-  const getCategoryPath = (mainCategory: string, subCategory: string): string => {
-    return `/${mainCategory.toLowerCase().replace(/\s+/g, "-")}/${subCategory.toLowerCase().replace(/\s+/g, "-")}`;
+  const getCategoryPath = (
+    mainCategory: string,
+    subCategory: string
+  ): string => {
+    return `/${mainCategory.toLowerCase().replace(/\s+/g, "-")}/${subCategory
+      .toLowerCase()
+      .replace(/\s+/g, "-")}`;
   };
 
   const isActiveLink = (path: string): boolean => {
@@ -48,7 +53,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full h-auto fixed font-montserrat border-b border-gray-200 bg-white z-50 pt-3">
+    <nav className="w-full h-auto sticky top-0 border-b border-gray-200 bg-white z-50 pt-3">
       <div className="flex flex-col space-y-5">
         {/* Top Bar */}
         <div className="relative flex items-center p-4 lg:px-16">
@@ -119,7 +124,10 @@ export default function Navbar() {
                         </h3>
                         <div className="grid grid-cols-2 gap-4">
                           {sublistContent[link]?.map((subcategory, index) => {
-                            const categoryPath = getCategoryPath(link, subcategory);
+                            const categoryPath = getCategoryPath(
+                              link,
+                              subcategory
+                            );
                             return (
                               <Link
                                 key={index}
@@ -153,9 +161,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`${menuOpen ? "block" : "hidden"} lg:hidden px-8 p-6`}
-        >
+        <div className={`${menuOpen ? "block" : "hidden"} lg:hidden px-8 p-6`}>
           <div className="flex flex-col space-y-4">
             {links.map((link) => (
               <div key={link} className="border-b pb-2">
