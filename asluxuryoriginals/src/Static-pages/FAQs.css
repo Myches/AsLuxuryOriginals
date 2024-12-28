@@ -1,9 +1,6 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
-
 .faqs {
   width: 90%;
-  margin: 60px auto 0 auto;
+  margin: -45px auto 0 auto;
 }
 
 .faqs a {
@@ -14,6 +11,7 @@
 
 .faqs h2 {
   font-size: clamp(18px, 3vw, 36px);
+  padding-bottom: 0.5em;
   margin: 35px 0 20px 0;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
@@ -22,12 +20,36 @@
   margin-bottom: 5px;
 }
 
+.faqs details summary {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faqs details summary::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.faqs details[open] summary::before {
+  transform: rotate(-135deg);
+}
+
 .faqs details:last-of-type {
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 .faqs details summary {
-  font-size: clamp(12px, 3vw, 16px);
+  font-size: clamp(11px, 3vw, 16px);
   font-weight: 600;
   background-color: #343232;
   padding: 1em 1em;
@@ -38,7 +60,7 @@
 }
 
 .faqs details[open] summary {
-  font-size: clamp(12px, 3vw, 16px);
+  font-size: clamp(11px, 3vw, 16px);
   background-color: #3d3b3b;
   color: rgba(245, 245, 245, 0.941);
   border-radius: 0.4rem;
@@ -70,6 +92,6 @@
 
 @media (min-width: 768px) {
   .faqs {
-    margin-top: 170px;
+    margin-top: -45px;
   }
 }

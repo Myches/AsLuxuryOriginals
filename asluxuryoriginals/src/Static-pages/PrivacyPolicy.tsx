@@ -47,16 +47,18 @@ const PrivacyPolicy = () => {
             <h3>How We Use Your Information</h3>
 
             <div>
-              <p>We use your personal information for the following purposes:</p>
+              <p>
+                We use your personal information for the following purposes:
+              </p>
               <div>
-                <strong>Order Fulfillment</strong>: To process and complete
-                your orders, including shipping, billing, and communication
-                regarding your purchase.
+                <strong>Order Fulfillment</strong>: To process and complete your
+                orders, including shipping, billing, and communication regarding
+                your purchase.
               </div>
             </div>
 
             <div>
-              <strong>Customer Support:</strong> 
+              <strong>Customer Support:</strong>
               To respond to inquiries, provide assistance, and address any
               issues related to your order or account.
             </div>
@@ -92,15 +94,15 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <strong>Access Control:</strong> Only authorized personnel have access
-              to your personal data, and we ensure they are trained to handle it
-              responsibly.
+              <strong>Access Control:</strong> Only authorized personnel have
+              access to your personal data, and we ensure they are trained to
+              handle it responsibly.
             </div>
 
             <div>
-              <strong>Regular Security Audits:</strong> We perform regular security
-              checks to detect vulnerabilities and ensure your data is safe from
-              unauthorized access.
+              <strong>Regular Security Audits:</strong> We perform regular
+              security checks to detect vulnerabilities and ensure your data is
+              safe from unauthorized access.
             </div>
           </article>
 
@@ -113,12 +115,12 @@ const PrivacyPolicy = () => {
               specific purposes, such as:
             </p>
             <div>
-              <strong>Payment Processors:</strong> To process payments securely and
-              efficiently
+              <strong>Payment Processors:</strong> To process payments securely
+              and efficiently
             </div>
             <div>
-              <strong>Shipping Partners:</strong> To fulfill your orders and deliver
-              products to your address.
+              <strong>Shipping Partners:</strong> To fulfill your orders and
+              deliver products to your address.
             </div>
 
             <div>
@@ -128,11 +130,11 @@ const PrivacyPolicy = () => {
             </div>
 
             <div>
-              <strong>Legal Compliance:</strong> We may disclose your information
-              if required by law, such as in response to a court order or legal
-              process. These third-party providers are obligated to handle your
-              data with the same level of security and confidentiality that we
-              uphold.
+              <strong>Legal Compliance:</strong> We may disclose your
+              information if required by law, such as in response to a court
+              order or legal process. These third-party providers are obligated
+              to handle your data with the same level of security and
+              confidentiality that we uphold.
             </div>
           </article>
 
@@ -164,20 +166,20 @@ const PrivacyPolicy = () => {
               personal information:
             </p>
             <div>
-              <strong>Access and Correction:</strong> You can request access to the
-              personal information we hold about you and request corrections or
-              updates.
+              <strong>Access and Correction:</strong> You can request access to
+              the personal information we hold about you and request corrections
+              or updates.
             </div>
             <div>
-              <strong>Data Deletion:</strong> You may request the deletion of your
-              personal data, subject to certain exceptions (such as legal
+              <strong>Data Deletion:</strong> You may request the deletion of
+              your personal data, subject to certain exceptions (such as legal
               obligations).
             </div>
 
             <div>
-              <strong>Marketing Preferences:</strong> You can opt-out of receiving
-              marketing communications from us at any time by clicking the
-              "unsubscribe" link in our emails or contacting us directly.
+              <strong>Marketing Preferences:</strong> You can opt-out of
+              receiving marketing communications from us at any time by clicking
+              the "unsubscribe" link in our emails or contacting us directly.
             </div>
 
             <p>
@@ -209,7 +211,9 @@ const PrivacyPolicy = () => {
             </p>
 
             <p>
-              If you have any questions or concerns about how we handle your personal information, or if you would like to exercise any of your rights under this policy, please contact us at{" "}
+              If you have any questions or concerns about how we handle your
+              personal information, or if you would like to exercise any of your
+              rights under this policy, please contact us at{" "}
               <a href="mailto:customerservice@asluxuryoriginals.com">
                 customerservice@asluxuryoriginals.com
               </a>

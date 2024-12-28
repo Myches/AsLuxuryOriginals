@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 .ref-p {
   width: 87%;
@@ -6,7 +5,7 @@
 }
 
 .ref-p h1 {
-  margin-top: 100px;
+  margin-top: -25px;
   font-weight: 500;
   margin-bottom: 12px;
   font-size: clamp(20px, 3vw, 26px);
@@ -17,25 +16,18 @@
   padding-top: 1.5em;
 }
 
-.ref-p article:last-of-type {
-  padding-bottom: 2em;
-}
-
 .ref-p article p {
   padding-bottom: 0.5em;
-  font-family: "Plus Jakarta Sans", sans-serif;
 }
 .ref-p h3 {
   font-size: clamp(19px, 3vw, 24px);
   padding: 0.3em 0;
   font-weight: 500;
-  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .ref-p p,
 .ref-p li {
   font-size: clamp(14px, 3vw, 16.5px);
-  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .ref-p span {
@@ -43,7 +35,6 @@
   display: inline-block;
   padding-bottom: 0.3em;
   padding-right: 4px;
-  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .ref-p a {
@@ -56,6 +47,6 @@
 
 @media (min-width: 768px) {
   .ref-p h1 {
-    margin-top: 190px;
+    margin-top: 0px;
   }
 }

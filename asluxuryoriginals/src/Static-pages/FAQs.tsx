@@ -419,7 +419,7 @@ const FAQs = () => {
             onToggle={handleDetailsToggle("details20")}
           >
             <summary>
-              Do you offer discounts, sales or promotions? Do you have a loyalty
+              Do you offer discounts, sales or promotions and do you have a loyalty
               program?
             </summary>
             <p>

@@ -1,11 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
-
-.div:first-of-type{
-  margin: 69px auto 0 auto;
-}
 
 .div div {
   padding: 2.5em 2em;
+}
+.div:first-of-type{
+  margin: -50px auto 0 auto;
 }
 
 .div p:first-child {
@@ -15,21 +13,19 @@
   color: #636161;
   line-height: 23px;
   font-weight: 600;
-  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .div p:last-child {
-  color: #696767;
+  color: #636161;
   font-weight: 400;
   font-size: clamp(10.5px, 3vw, 20px);
-  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 @media (min-width: 768px) {
   .div {
     display: flex;
     padding-bottom: 45px;
-    width: 90%;
+    width: 88%;
     margin: 0 auto;
   }
 
@@ -38,15 +34,18 @@
   }
 
   .div img {
-    max-width: 550px;
+    max-width: 500px;
   }
 
   .text-r {
     flex-direction: row-reverse;
   }
 
+  .text-r{
+    padding-right: 43px;
+  }
+
   .div:not(.text-r) article {
-    /* border: 2px solid brown; */
     padding-right: 23px;
   }
 
@@ -61,22 +60,24 @@
   }
 
   .div:first-of-type {
-    margin-top: 13rem;
+    margin-top: 2px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1100px) {
+
+  .text-r{
+    padding-right: 1px;
+  }
   .div div p:first-child {
-    font-size: 13px;
     font-size: clamp(15px, 1vw, 20px);
   }
 
   .div div p:last-child {
-    font-size: 13px;
     font-size: clamp(12px, 1vw, 16px);
   }
 
   .div img {
-    max-width: 360px;
+    max-width: 320px;
   }
 }
