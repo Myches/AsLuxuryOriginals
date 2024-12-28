@@ -20,6 +20,7 @@ const Clothing = () => {
   const [products] = useState<Product[]>(items.results);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(items.results);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState("All Clothings");
 
   useEffect(() => {
     if (category) {
@@ -47,6 +48,11 @@ const Clothing = () => {
     setFilteredProducts(sortedProducts);
   };
 
+  const handleFilterClick = (filter: string) => {
+    setSelectedFilter(filter);
+    setIsDropdownOpen(false);
+  };
+
   const clothingFilters = sublistContent.Clothing || [];
 
   return (
@@ -67,7 +73,7 @@ const Clothing = () => {
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className="flex justify-between md:hidden bg-[#00000081] text-white rounded-lg px-5 py-2 w-full text-left"
           >
-            <span>All Clothings</span> <span>{isDropdownOpen ? "▲" : "▼"}</span>
+            <span>{selectedFilter}</span> <span>{isDropdownOpen ? "▲" : "▼"}</span>
           </button>
 
           <ul
@@ -83,6 +89,7 @@ const Clothing = () => {
                   ? 'border-[#FF7F50] bg-[#FF7F50] text-white' 
                   : 'border-[#5a5a5a60]'
               } rounded-lg mr-2.5`}
+              onClick={() => handleFilterClick(filter)}
             >
               <Link 
                 to={`/clothing/${filter.toLowerCase().replace(/\s+/g, "-")}`} 

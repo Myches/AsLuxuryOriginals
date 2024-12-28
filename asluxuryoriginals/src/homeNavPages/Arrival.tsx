@@ -40,12 +40,12 @@ const NewArrivals = () => {
       </div>
 
       <div className='flex items-start justify-between relative'>
-        <ul className="flex items-center mb-12">
+        <ul className="grid grid-cols-2 gap-2 mb-12 flex-[0.6] w-full md:flex md:flex-wrap md:w-auto md:flex-[0.75] mr-4">
             {/* <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to='' className="flex justify-between items-center font-medium"><span className='mr-2.5'>All Filters</span><MdFilterList size={25} /></Link></li> */}
-            <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to='/fragrances' className='text-gray-500 bg-transparent px-4 py-2 rounded hover:text-gray-700 active:text-black active:bg-white'>Fragrances</Link></li>
-            <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to='/clothing' className='text-gray-500 bg-transparent px-4 py-2 rounded hover:text-gray-700 active:text-black active:bg-white'>Clothings</Link></li>
-            <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to='/footwear' className='text-gray-500 bg-transparent px-4 py-2 rounded hover:text-gray-700 active:text-black active:bg-white'>Footwears</Link></li>
-            <li className='border-2 border-[#5a5a5a60] rounded-lg px-5 py-2.5 mr-2.5'><Link to='/accessories' className='text-gray-500 bg-transparent px-4 py-2 rounded hover:text-gray-700 active:text-black active:bg-white'>Accessories</Link></li>
+            <li className='border-2 border-[#5a5a5a60] rounded-lg'><Link to='/fragrances' className="block px-2 py-1 text-gray-500 bg-transparent rounded hover:text-gray-700 active:text-white active:bg-black md:px-5 md:py-2.5">Fragrances</Link></li>
+            <li className='border-2 border-[#5a5a5a60] rounded-lg'><Link to='/clothing' className="block px-2 py-1 text-gray-500 bg-transparent rounded hover:text-gray-700 active:text-white active:bg-black md:px-5 md:py-2.5">Clothings</Link></li>
+            <li className='border-2 border-[#5a5a5a60] rounded-lg'><Link to='/footwear' className="block px-2 py-1 text-gray-500 bg-transparent rounded hover:text-gray-700 active:text-white active:bg-black md:px-5 md:py-2.5">Footwears</Link></li>
+            <li className='border-2 border-[#5a5a5a60] rounded-lg'><Link to='/accessories' className="block px-2 py-1 text-gray-500 bg-transparent rounded hover:text-gray-700 active:text-white active:bg-black md:px-5 md:py-2.5">Accessories</Link></li>
         </ul>
         <div className='flex flex-col items-end absolute right-0 z-10'>
           <button onClick={toggleDropdown} className='flex py-2 px-4 mb-5 rounded-md hover:bg-gray-200'>

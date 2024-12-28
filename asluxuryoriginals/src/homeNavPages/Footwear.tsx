@@ -20,6 +20,7 @@ const Footwear = () => {
   const [products] = useState<Product[]>(items.results);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(items.results);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState("All Footwears");
 
   const FootwearFilters = sublistContent.Footwear || [];
 
@@ -49,6 +50,11 @@ const Footwear = () => {
     setFilteredProducts(sortedProducts);
   };
 
+  const handleFilterClick = (filter: string) => {
+    setSelectedFilter(filter);
+    setIsDropdownOpen(false);
+  };
+
   return (
     <div className=" mx-5 md:mx-16 text-sm sm:text-base leading-[1.5]">
       <div className="mb-10">
@@ -67,7 +73,7 @@ const Footwear = () => {
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className="flex justify-between md:hidden bg-[#00000081] text-white rounded-lg px-5 py-2 w-full text-left"
           >
-            <span>All Footwears</span> <span>{isDropdownOpen ? "▲" : "▼"}</span>
+            <span>{selectedFilter}</span> <span>{isDropdownOpen ? "▲" : "▼"}</span>
           </button>
           <ul
             className={`${
@@ -82,6 +88,7 @@ const Footwear = () => {
                   ? 'border-[#708090] bg-[#708090] text-white' 
                   : 'border-[#5a5a5a60]'
               } rounded-lg mr-2.5`}
+              onClick={() => handleFilterClick(filter)}
               >
                 <Link to={`/footwear/${filter.toLowerCase().replace(/\s+/g, "-")}`} className="block px-5 py-2.5">
                   {filter}
