@@ -27,12 +27,13 @@ import Clothing from "./homeNavPages/Clothing";
 import Home from "./homeNavPages/HomePage";
 import SearchResults from "./pages/search-result/SearchResults";
 import Checkout from "./pages/checkout/Checkout";
-
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
   // Static pages defined inline
 
   return (
     <Router>
+ <ScrollToTop />
       <Routes>
         /* Main Layout Routes */
         <Route path="/" element={<MainLayout />}>
